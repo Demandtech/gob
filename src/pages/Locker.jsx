@@ -1,6 +1,7 @@
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Input from '../components/Input'
+import Button from '../components/Button'
 
 const Locker = () => {
   return (
@@ -31,9 +32,9 @@ const Locker = () => {
           placeholder='Select Date'
         />
         <div className='text-center mt-10'>
-          <button className='bg-secondary-btn text-white px-5 py-2 rounded-md'>
-            Lock
-          </button>
+          <div className='text-center'>
+            <Button label={'Approve Token'} />
+          </div>
         </div>
       </div>
     </Layout>
