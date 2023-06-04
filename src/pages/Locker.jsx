@@ -24,7 +24,7 @@ const Locker = () => {
           type='date'
           placeholder='Select Date'
         />
-        <div className='text-center'>
+        <div className='text-center mt-10'>
           <button className='bg-title text-white px-5 py-2 rounded-md'>
             Lock
           </button>
