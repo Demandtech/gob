@@ -5,14 +5,11 @@ export default {
     extend: {
       colors: {
         background: '#041d24',
-        'secondary-background': '#041d24',
         primary: '#dbf3fb',
         'primary-btn': '#45c2e8',
         'secondary-btn': '#031217',
+        title: '#924527',
       },
-      boxShadow: {
-       'box-shadow': '0px 4px 4px rgba(15, 23, 42, 0.3)'
-      }
     },
   },
   plugins: [],

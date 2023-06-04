@@ -20,7 +20,7 @@ const projects = [
 export const Counter = () => {
   console.log(projects)
   return (
-    <div className=' border flex justify-between bg-primary p-5 mt-5 rounded-md flex-col md:flex-row shadow-md gap-5'>
+    <div className='bg-primary flex justify-between  p-5 mt-5 rounded-xl flex-col md:flex-row shadow-md gap-5 counterEl'>
       {projects.map((pro, index) => {
         return (
           <div key={index} className='text-center shadow-md p-3 rounded-md'>

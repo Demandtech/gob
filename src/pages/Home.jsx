@@ -7,7 +7,7 @@ const Home = () => {
     <Layout>
       <div>
         <Header page='Home' title='Blue Launchpad' />
-        <div className='bg-secondary-background flex items-center justify-center py-10 rounded-md'>
+        <div className='bg-background flex items-center justify-center py-10 rounded-xl'>
           <div>
             <img src='https://i.ibb.co/wMfTQm9/LOGO2-edit.jpg' alt='' />
           </div>
