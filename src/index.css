@@ -1,18 +1,60 @@
 body {
   position: relative;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .input-control input {
   box-shadow: 0px 4px 4px rgba(15, 23, 42, 0.3);
   border-radius: 4px;
 }
-.input-control input:focus{
- outline: none;
- transform: translateY(-2px);
- transition: ease-in-out 1s
+.input-control input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  transition: ease-in-out 1s;
+}
+.gradient {
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 15px #eef2f3;
 }
 
+.gradient2 {
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  right: -50px;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 15px #eef2f3;
+  overflow: hidden;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

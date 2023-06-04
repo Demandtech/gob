@@ -1,4 +1,4 @@
-const Input = ({ type, placeholder, label, name }) => {
+const Input = ({ type, placeholder, label, name, info }) => {
   return (
     <div className='mb-3 input-control'>
       {type !== 'checkbox' && (
@@ -13,8 +13,7 @@ const Input = ({ type, placeholder, label, name }) => {
             type !== 'checkbox' ? 'w-full' : ''
           } border border-gray700 p-2`}
           type={type}
-      name={name}
-    
+          name={name}
         />
         {name === 'amount' && (
           <button className='text-primary-btn absolute right-5'>Max</button>
@@ -27,9 +26,7 @@ const Input = ({ type, placeholder, label, name }) => {
           )}
         </div>
       </div>
-      {name === 'amount' && (
-        <p className='text-primary-btn mt-2'> Remaining tokens: 9999</p>
-      )}
+      {info && <p className='text-primary-btn mt-2'>{info}</p>}
     </div>
   )
 }

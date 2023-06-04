@@ -42,7 +42,7 @@ const Sidebar = () => {
   }
   return (
     <aside
-      className={` bg-background text-primary p-5 min-h-screen bottom-0 top-0 transition-all duration-300 ${
+      className={` bg-background text-primary p-5 min-h-screen bottom-0 top-0 transition-all duration-300 z-50 ${
         !isSidebarOpen
           ? 'w-14 overflow-hidden absolute '
           : 'md:w-[300px] md:fixed top-0 left-0 bottom-0'

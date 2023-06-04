@@ -12,15 +12,17 @@ const Header = ({ title, page }) => {
             <FaWallet />
             Connect Wallet
           </button>
-          <button className='hover:-translate-y-0.5 bg-title text-white px-2 py-1 rounded-md flex items-center gap-2 transition-all delay-150'>
+          <button className='hover:-translate-y-0.5 bg-secondary-btn text-white px-2 py-1 rounded-md flex items-center gap-2 transition-all delay-150'>
             <FaCoins />
             ETH Chain
           </button>
         </div>
       </div>
-      <h1 className=' mt-5 text-center md:text-left text-title text-4xl font-bold mb-2'>
-        {title}
-      </h1>
+     
+        <h1 className='title mt-5 text-center md:text-left text-secondary-btn text-2xl md:text-4xl font-bold mb-2 after:'>
+          {title}
+        </h1>
+        
     </header>
   )
 }
