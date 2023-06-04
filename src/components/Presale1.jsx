@@ -3,9 +3,7 @@ import Button from './Button'
 import { useState } from 'react'
 
 const Presale1 = ({ onclick, onchange }) => {
-
- 
-
+  
   return (
     <div className='bg-primary p-10 mt-10'>
       <Input
@@ -37,7 +35,7 @@ const Presale1 = ({ onclick, onchange }) => {
         info={'Your users will pay with ETH for your token'}
       />
       <div className='text-center mt-5'>
-        <Button onclick={onclick} label={'Approve Token'} />
+        <Button onclick={()=>onclick('next')} label={'Approve Token'} />
       </div>
     </div>
   )
