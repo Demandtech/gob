@@ -1,9 +1,9 @@
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import Presale1 from '../components/Presale1'
-import Presale2 from '../components/Presale2'
-import Presale3 from '../components/Presale3'
-import Presale4 from '../components/Presale4'
+import Presale1 from '../components/PresaleOne'
+import Presale2 from '../components/PresaleTwo'
+import Presale3 from '../components/PresaleThree'
+import Presale4 from '../components/PresaleFour'
 import TabsNavigate from '../components/TabsNavigate'
 import { useState } from 'react'
 

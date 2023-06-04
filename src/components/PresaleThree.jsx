@@ -1,6 +1,6 @@
 import Button from "./Button"
 
-const Presale3 = ({onclick}) => {
+const PresaleThree = ({onclick}) => {
   return (
     <div>
       <div className='flex gap-5 justify-center'>
@@ -11,4 +11,4 @@ const Presale3 = ({onclick}) => {
   )
 }
 
-export default Presale3
+export default PresaleThree

@@ -2,7 +2,7 @@ import Input from './Input'
 import Button from './Button'
 import { useState } from 'react'
 
-const Presale1 = ({ onclick, onchange }) => {
+const PresaleOne = ({ onclick, onchange }) => {
   
   return (
     <div className='bg-primary p-10 mt-10'>
@@ -41,4 +41,4 @@ const Presale1 = ({ onclick, onchange }) => {
   )
 }
 
-export default Presale1
+export default PresaleOne
