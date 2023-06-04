@@ -22,7 +22,7 @@ const navigation = [
     id: '3333',
     name: 'Pre Sale',
     child: ['child1', 'child2', 'child3'],
-    link: 'presale'
+    link: '/presale'
   },
   {
     id: '4444',

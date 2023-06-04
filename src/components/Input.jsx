@@ -6,14 +6,15 @@ const Input = ({ type, placeholder, label, name }) => {
           {label}{' '}
         </label>
       )}
-      <div className='flex items-center space-x-2 relative'>
+      <div className='flex items-center space-x-2 relative focus:-translate-y-1'>
         <input
           placeholder={placeholder}
           className={`${
             type !== 'checkbox' ? 'w-full' : ''
           } border border-gray700 p-2`}
           type={type}
-          name={name}
+      name={name}
+    
         />
         {name === 'amount' && (
           <button className='text-primary-btn absolute right-5'>Max</button>
