@@ -14,10 +14,10 @@ const Presale = () => {
     console.log(action)
     if (action === 'prev') {
       console.log('prev')
-      if (activeEl > 0) {
-        setActiveEl(activeEl - 1)
-      } else {
+      if (activeEl === 0 ) {
         setActiveEl(0)
+      } else if(activeEl > 0) {
+        setActiveEl(activeEl - 1)
       }
     } else if (action === 'next') {
       console.log('clcicked')
