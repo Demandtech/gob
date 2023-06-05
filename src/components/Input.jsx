@@ -1,5 +1,5 @@
 import { useState } from "react"
-const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
+const Input = ({ type, placeholder, label, name, info, onchange, value, className }) => {
   const [selectedCurrency, setSelectedCurrency] = useState()
   if (type === 'radio') {
     return (
@@ -31,7 +31,7 @@ const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
     <>
       <div className='mb-3 input-control'>
         {type !== 'checkbox' && (
-          <label className='pb-1 block text-dark' htmlFor={name}>
+          <label className={`pb-1 block text-dark ${className}`} htmlFor={name}>
             {label}{' '}
           </label>
         )}

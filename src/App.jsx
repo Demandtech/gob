@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Locker from './pages/Locker'
 import Presale from './pages/Presale'
+import Explore from './pages/Explore'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/locker' element={<Locker />} />
           <Route path='/presale' element={<Presale />} />
+          <Route path='/explore' element={<Explore />} />
         </Routes>
       </BrowserRouter>
     </div>

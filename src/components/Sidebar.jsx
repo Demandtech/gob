@@ -26,8 +26,9 @@ const navigation = [
   },
   {
     id: '4444',
-    name: 'Navigation4',
+    name: 'Explore',
     child: ['child1', 'child2', 'child3'],
+    link: '/explore'
   },
 ]
 
