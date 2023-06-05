@@ -6,6 +6,8 @@ import {
   FaTelegramPlane,
   FaMedium,
   FaChartLine,
+  FaChevronDown,
+  FaChevronUp,
 } from 'react-icons/fa'
 import navArroIcon from '../assets/svgs/nav-arrow-icon.svg'
 import { Link } from 'react-router-dom'
@@ -68,8 +70,12 @@ const navigation = [
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpenTwo, setIsMenuOpenTwo] = useState(false)
   const menuRef = useRef(null)
   const innerMenuRef = useRef(null)
+
+  const menuRefTwo = useRef(null)
+  const innerMenuRefTwo = useRef(null)
 
   function handleSidebar(event) {
     setIsSidebarOpen((prev) => !prev)
@@ -77,7 +83,13 @@ const Sidebar = () => {
 
   function handleMenuOpen(index) {
     if (isSidebarOpen) {
-      setIsMenuOpen(true)
+      setIsMenuOpen(!isMenuOpen)
+    }
+  }
+
+  function handleMenuOpenTwo(index) {
+    if (isSidebarOpen) {
+      setIsMenuOpenTwo(!isMenuOpenTwo)
     }
   }
 
@@ -87,11 +99,24 @@ const Sidebar = () => {
     console.log(isMenuOpen)
     console.log(height1, height)
     if (isMenuOpen) {
+      menuRefTwo.current.style.height = '0px'
       menuRef.current.style.height = `${height}px`
     } else {
       menuRef.current.style.height = '0px'
     }
   }, [isMenuOpen])
+
+  useEffect(() => {
+    let height = innerMenuRefTwo.current.getBoundingClientRect().height
+    let height1 = menuRefTwo.current.getBoundingClientRect().height
+    
+    if (isMenuOpenTwo) {
+      menuRef.current.style.height = '0px'
+      menuRefTwo.current.style.height = `${height}px`
+    } else {
+      menuRefTwo.current.style.height = '0px'
+    }
+  }, [isMenuOpenTwo])
 
   useEffect(() => {
     if (!isSidebarOpen) {
@@ -172,8 +197,8 @@ const Sidebar = () => {
             )}
           </div>
 
-          <ul className='flex flex-col gap-7'>
-            {navigation.map((nav, index) => {
+          <ul className='flex flex-col text-[#100702]'>
+            {/* {navigation.map((nav, index) => {
               return (
                 <li key={nav.id} className=''>
                   <div
@@ -183,7 +208,7 @@ const Sidebar = () => {
                     <div>
                       <button className='w-5'>
                         {nav.icon}
-                        {/* <FiLayout size={22} className='text-[#100702]' /> */}
+                        { <FiLayout size={22} className='text-[#100702]' />}
                       </button>
                     </div>
                     {isSidebarOpen && (
@@ -205,7 +230,84 @@ const Sidebar = () => {
                   </ul>
                 </li>
               )
-            })}
+            })}  */}
+
+            <li className='flex gap-5 mb-5'>
+              <div>
+                <FcHome size={20} />
+              </div>
+              <span>Home</span>
+            </li>
+            <li
+              className='flex gap-2 items-center mb-5'
+              onClick={handleMenuOpen}
+            >
+              <div className='flex gap-5 items-center'>
+                <div>
+                  <SiLaunchpad size={20} />
+                </div>
+                <span>LaunchPad</span>
+              </div>
+              <div>
+                <FaChevronDown />
+              </div>
+            </li>
+            <div
+              ref={menuRef}
+              className='overflow-hidden transition-all duration-150'
+            >
+              <ul ref={innerMenuRef} className='pb-5'>
+                <li>Child One</li>
+
+                <li>Child One</li>
+
+                <li>Child One</li>
+              </ul>
+            </div>
+            <li onClick={handleMenuOpenTwo} className='flex gap-2 items-center mb-5'>
+              <div className='flex gap-5 items-center'>
+                <div>
+                  <BsPersonLock size={20} />
+                </div>
+                <span>Lock</span>
+              </div>
+              <div>
+                <FaChevronDown />
+              </div>
+            </li>
+            <div ref={menuRefTwo} className='overflow-hidden'>
+              <ul ref={innerMenuRefTwo} className='pb-5'>
+                <li>Child One</li>
+
+                <li>Child One</li>
+
+                <li>Child One</li>
+              </ul>
+            </div>
+            <li className='flex gap-5 mb-5'>
+              <div>
+                <FaTelegramPlane size={20} />
+              </div>
+              <span>Telegram</span>
+            </li>
+            <li className='flex gap-5 mb-5'>
+              <div>
+                <FiTwitter size={20} />
+              </div>
+              <span>Twitter</span>
+            </li>
+            <li className='flex gap-5 mb-5'>
+              <div>
+                <FaMedium size={20} />
+              </div>
+              <span>Medium</span>
+            </li>
+            <li className='flex gap-5'>
+              <div>
+                <FaChartLine size={20} />
+              </div>
+              <span>Base Chart</span>
+            </li>
           </ul>
         </div>
       </aside>
