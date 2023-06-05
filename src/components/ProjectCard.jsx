@@ -14,7 +14,7 @@ const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
           alt=''
         />
       </div>
-      <div className='p-3'>
+      <div className='px-3 py-5' >
         <h3 className='font-bold pb-1'>{title}</h3>
         <p>{desc}</p>
         <a href={'#'} className='mt-y text-primary-btn'>

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Locker from './pages/Locker'
 import Presale from './pages/Presale'
 import Explore from './pages/Explore'
+import ProjectName from './pages/ProjectName'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/locker' element={<Locker />} />
           <Route path='/presale' element={<Presale />} />
           <Route path='/explore' element={<Explore />} />
+          <Route path='/project' element={<ProjectName />} />
         </Routes>
       </BrowserRouter>
     </div>
