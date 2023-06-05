@@ -7,12 +7,12 @@ const Home = () => {
     <Layout>
       <div>
         <Header page='Home' title='First Launchpad' />
-        <div className='rounded-xl home-img overflow-hidden'>
-          <div className='w-full'>
+        <div className='rounded-xl home-img overflow-hidden h-[450px]'>
+          <div className='w-full h-full'>
             <img
               src='https://i.ibb.co/ZVG5wV1/photo1685955725.jpg'
               alt='logo'
-              className='w-full object-cover'
+              className='w-full h-full object-contain '
             />
           </div>
         </div>
