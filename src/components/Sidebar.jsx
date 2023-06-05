@@ -3,6 +3,7 @@ import menu from '../assets/svgs/menu-icon.svg'
 import { FaBars, FaArrowLeft } from 'react-icons/fa'
 import navArroIcon from '../assets/svgs/nav-arrow-icon.svg'
 import { Link } from 'react-router-dom'
+import { FiLayout } from 'react-icons/fi'
 
 const navigation = [
   {
@@ -68,7 +69,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='bg-background text-primary flex items-center  gap-5 md:hidden p-5'
+        className='bg-background text-[#100702] flex items-center  gap-5 md:hidden p-5'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -86,7 +87,7 @@ const Sidebar = () => {
           )}
           <div className='icon absolute top-0 h-full left-0 w-full'></div>
         </button>
-        <p className='text-primary flex-1'>First Launchpad</p>
+        <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
         className={`aside text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 absolute md:fixed bg-background`}
@@ -108,17 +109,22 @@ const Sidebar = () => {
             <button className='h-10 relative' type='button'>
               {!isSidebarOpen ? (
                 <div className='icon'>
-                  <FaBars size={22} className='-rotate-45 icon' />
+                  <FaBars
+                    size={22}
+                    className='-rotate-45 icon text-[#100702]'
+                  />
                 </div>
               ) : (
-                <div className='icon'>
+                <div className='icon text-[#100702]'>
                   <FaArrowLeft size={22} />
                 </div>
               )}
               <div className='icon absolute top-0 h-full left-0 w-full'></div>
             </button>
             {isSidebarOpen && (
-              <p className='whitespace-nowrap'>First Launchpad</p>
+              <p className='text-[#100702] whitespace-nowrap'>
+                First Launchpad
+              </p>
             )}
           </div>
 
@@ -128,15 +134,11 @@ const Sidebar = () => {
                 <li key={nav.id} className=''>
                   <div
                     onClick={() => handleMenuOpen(index)}
-                    className='menu-item flex gap-5'
+                    className='menu-item flex gap-5 text-[#100702]'
                   >
                     <div>
                       <button className='w-5'>
-                        <img
-                          className='w-full object-cover'
-                          src={menu}
-                          alt={'menu icon'}
-                        />
+                        <FiLayout size={22} className='text-[#100702]' />
                       </button>
                     </div>
                     {isSidebarOpen && (
@@ -154,7 +156,7 @@ const Sidebar = () => {
                   >
                     {nav.child.map((navChild, childIndex) => {
                       return (
-                        <li className='pl-2' key={childIndex}>
+                        <li className='pl-2 text-[#100702]' key={childIndex}>
                           {navChild}
                         </li>
                       )
