@@ -7,8 +7,8 @@ const Home = () => {
     <Layout>
       <div>
         <Header page='Home' title='First Launchpad' />
-        <div className='py-20 rounded-xl home-img'>
-          <div className='w-2/3 mx-auto'>
+        <div className='rounded-xl home-img overflow-hidden'>
+          <div className='w-full'>
             <img
               src='https://i.ibb.co/ZVG5wV1/photo1685955725.jpg'
               alt='logo'
