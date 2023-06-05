@@ -99,7 +99,8 @@ const Sidebar = () => {
     console.log(isMenuOpen)
     console.log(height1, height)
     if (isMenuOpen) {
-      menuRefTwo.current.style.height = '0px'
+      // menuRefTwo.current.style.height = '0px'
+      setIsMenuOpenTwo(false)
       menuRef.current.style.height = `${height}px`
     } else {
       menuRef.current.style.height = '0px'
@@ -109,9 +110,10 @@ const Sidebar = () => {
   useEffect(() => {
     let height = innerMenuRefTwo.current.getBoundingClientRect().height
     let height1 = menuRefTwo.current.getBoundingClientRect().height
-    
+
     if (isMenuOpenTwo) {
-      menuRef.current.style.height = '0px'
+      // menuRef.current.style.height = '0px'
+      setIsMenuOpen(false)
       menuRefTwo.current.style.height = `${height}px`
     } else {
       menuRefTwo.current.style.height = '0px'
@@ -121,6 +123,7 @@ const Sidebar = () => {
   useEffect(() => {
     if (!isSidebarOpen) {
       setIsMenuOpen(false)
+      setIsMenuOpenTwo(false)
     }
     const handleOutsideClick = (event) => {
       if (
@@ -142,11 +145,11 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='bg-background text-[#100702] flex items-center  gap-5 md:hidden p-5'
+        className='bg-background text-[#100702] flex items-center right-0 left-0  gap-5 md:hidden py-5 fixed'
         onClick={(event) => handleSidebar(event)}
       >
         <button
-          className='h-5 w-5 z-10 icon grid place-items-center relative'
+          className='h-5 w-5 z-10 icon grid place-items-center relative px-5'
           type='button'
         >
           {!isSidebarOpen ? (
@@ -163,21 +166,20 @@ const Sidebar = () => {
         <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
-        className={`aside text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 absolute md:fixed bg-background`}
+        className={`aside text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 fixed md:fixed bg-background`}
       >
         <div
           className={`transition-all duration-150 ${
             !isSidebarOpen
-              ? 'w-0 md:w-[60px] md:px-5 pt-5 md:pt-10 overflow-hidden'
-              : 'w-[200px] px-5 pt-5 md:pt-10'
+              ? 'w-0 md:w-[60px] pt-5 md:pt-10 overflow-hidden'
+              : 'w-[230px] pt-5 md:pt-10'
           } 
       `}
         >
           <div
-            className='mb-10 gap-5 hidden md:flex items-center'
+            className='mb-10 gap-5 hidden md:flex items-center pl-5'
             onClick={(event) => handleSidebar(event)}
           >
-            {/* I get Outside as console output when I click on this button and this button is inside aside element that I added event listener to */}
             <button className='h-10 relative' type='button'>
               {!isSidebarOpen ? (
                 <div className='icon'>
@@ -197,116 +199,117 @@ const Sidebar = () => {
             )}
           </div>
 
-          <ul className='flex flex-col text-[#100702]'>
-            {/* {navigation.map((nav, index) => {
-              return (
-                <li key={nav.id} className=''>
-                  <div
-                    onClick={() => handleMenuOpen()}
-                    className='menu-item flex gap-5 text-[#100702]'
-                  >
-                    <div>
-                      <button className='w-5'>
-                        {nav.icon}
-                        { <FiLayout size={22} className='text-[#100702]' />}
-                      </button>
-                    </div>
-                    {isSidebarOpen && (
-                      <Link className='whitespace-nowrap' to={nav.link}>
-                        {nav.name}
-                      </Link>
-                    )}
-                  </div>
-                  <ul className={`${isMenuOpen ? 'h-full' : 'overflow-hidden h-0'} `} ref={menuRef}>
-                    <div ref={innerMenuRef} className=''>
-                      {nav.child?.map((navChild, childIndex) => {
-                        return (
-                          <li className='pl-2 text-[#100702]' key={childIndex}>
-                            {navChild}
-                          </li>
-                        )
-                      })}
-                    </div>
-                  </ul>
-                </li>
-              )
-            })}  */}
-
-            <li className='flex gap-5 mb-5'>
+          <ul className='flex flex-col text-[#100702] '>
+            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FcHome size={20} />
               </div>
-              <span>Home</span>
+              <Link to={'/'}>Home</Link>
             </li>
             <li
-              className='flex gap-2 items-center mb-5'
+              className={` gap-2  mb-5 px-5 py-1 ${
+                isMenuOpen ? 'bg-[#ccab72] drop-down' : 'bg-dark'
+              }`}
               onClick={handleMenuOpen}
             >
-              <div className='flex gap-5 items-center'>
-                <div>
-                  <SiLaunchpad size={20} />
+              <div className='flex gap-2 items-center cursor-pointer'>
+                <div className='flex gap-5 items-center'>
+                  <div>
+                    <SiLaunchpad size={20} />
+                  </div>
+                  <span>LaunchPad</span>
                 </div>
-                <span>LaunchPad</span>
+                <div>
+                  {isMenuOpen ? (
+                    <FaChevronDown size={10} />
+                  ) : (
+                    <FaChevronUp size={10} />
+                  )}
+                </div>
               </div>
-              <div>
-                <FaChevronDown />
+              <div
+                ref={menuRef}
+                className='overflow-hidden transition-all duration-150'
+              >
+                <ul
+                  ref={innerMenuRef}
+                  className={`pl-10 ${
+                    isMenuOpen
+                      ? ' py-1 border-black transition-all duration-150 '
+                      : 'bg-dark'
+                  }`}
+                >
+                  <li>
+                    <Link to={'/presale'}>Create Launchpad</Link>
+                  </li>
+
+                  <li>
+                    <Link to='/project'>Launchpad List</Link>
+                  </li>
+                </ul>
               </div>
             </li>
-            <div
-              ref={menuRef}
-              className='overflow-hidden transition-all duration-150'
+
+            <li
+              onClick={handleMenuOpenTwo}
+              className={`mb-5 px-5 py-1 ${
+                isMenuOpenTwo ? 'drop-down bg-[#ccab72]' : 'bg-dark'
+              }`}
             >
-              <ul ref={innerMenuRef} className='pb-5'>
-                <li>Child One</li>
-
-                <li>Child One</li>
-
-                <li>Child One</li>
-              </ul>
-            </div>
-            <li onClick={handleMenuOpenTwo} className='flex gap-2 items-center mb-5'>
-              <div className='flex gap-5 items-center'>
-                <div>
-                  <BsPersonLock size={20} />
+              <div className='flex gap-2 items-center cursor-pointer'>
+                <div className='flex gap-5 items-center'>
+                  <div>
+                    <BsPersonLock size={20} />
+                  </div>
+                  <span>Lock</span>
                 </div>
-                <span>Lock</span>
+                <div>
+                  {isMenuOpenTwo ? (
+                    <FaChevronDown size={10} />
+                  ) : (
+                    <FaChevronUp size={10} />
+                  )}
+                </div>
               </div>
-              <div>
-                <FaChevronDown />
+              <div
+                ref={menuRefTwo}
+                className='overflow-hidden transition-all duration-150'
+              >
+                <ul ref={innerMenuRefTwo} className={`pl-10 pt-1 `}>
+                  <li>
+                    <Link to='/locker'>Create Lock</Link>
+                  </li>
+
+                  <li>
+                    <Link to='/explore'>Lock List</Link>
+                  </li>
+                </ul>
               </div>
             </li>
-            <div ref={menuRefTwo} className='overflow-hidden'>
-              <ul ref={innerMenuRefTwo} className='pb-5'>
-                <li>Child One</li>
 
-                <li>Child One</li>
-
-                <li>Child One</li>
-              </ul>
-            </div>
-            <li className='flex gap-5 mb-5'>
+            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FaTelegramPlane size={20} />
               </div>
               <span>Telegram</span>
             </li>
-            <li className='flex gap-5 mb-5'>
+            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FiTwitter size={20} />
               </div>
-              <span>Twitter</span>
+              <Link>Twitter</Link>
             </li>
-            <li className='flex gap-5 mb-5'>
+            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FaMedium size={20} />
               </div>
-              <span>Medium</span>
+              <Link>Medium</Link>
             </li>
-            <li className='flex gap-5'>
+            <li className='flex gap-5 cursor-pointer px-5'>
               <div>
                 <FaChartLine size={20} />
               </div>
-              <span>Base Chart</span>
+              <Link className='whitespace-nowrap'>Base Chart</Link>
             </li>
           </ul>
         </div>
