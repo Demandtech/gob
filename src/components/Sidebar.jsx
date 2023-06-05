@@ -97,7 +97,7 @@ const Sidebar = () => {
           className={`transition-all duration-150 ${
             !isSidebarOpen
               ? 'w-0 md:w-[60px] md:px-5 pt-5 md:pt-10 overflow-hidden'
-              : 'w-screen md:w-[300px] px-5 pt-5 md:pt-10'
+              : 'w-[200px] px-5 pt-5 md:pt-10'
           } 
       `}
         >

@@ -24,9 +24,9 @@ export const Counter = () => {
         return (
           <div
             key={index}
-            className='text-center shadow-md p-3 rounded-md flex-1'
+            className='text-center text-white shadow-md p-3 rounded-md flex-1'
           >
-            <h2 className='font-bold text-3xl text-[#031217]'>{pro.count}</h2>
+            <h2 className='font-bold text-3xl '>{pro.count}</h2>
             <p>{pro.text}</p>
           </div>
         )

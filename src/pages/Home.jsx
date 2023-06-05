@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import { Counter } from '../components/Counter'
+import img from '../assets/logo.png'
 
 const Home = () => {
   return (
@@ -10,9 +11,10 @@ const Home = () => {
         <div className='rounded-xl home-img overflow-hidden h-[500px]'>
           <div className='w-full h-full'>
             <img
-              src='https://i.ibb.co/hBS9bSh/BOOK.png'
+              src={img}
               alt='logo'
-              className='w-full h-full object-fill '
+              className='w-full h-full object-contain'
+              loading='lazy'
             />
           </div>
         </div>
