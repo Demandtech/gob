@@ -17,7 +17,7 @@ const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
             <button className='text-primary-btn absolute right-5'>Max</button>
           )}
           <div>
-            <label className='text-background' htmlFor={name}>
+            <label className='text-dark' htmlFor={name}>
               {label}{' '}
             </label>
           </div>
@@ -31,7 +31,7 @@ const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
     <>
       <div className='mb-3 input-control'>
         {type !== 'checkbox' && (
-          <label className='pb-1 block text-background' htmlFor={name}>
+          <label className='pb-1 block text-dark' htmlFor={name}>
             {label}{' '}
           </label>
         )}
@@ -51,7 +51,7 @@ const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
           )}
           <div>
             {type === 'checkbox' && (
-              <label className='text-background' htmlFor={name}>
+              <label className='text-dark' htmlFor={name}>
                 {label}{' '}
               </label>
             )}

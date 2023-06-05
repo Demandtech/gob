@@ -8,7 +8,7 @@ const presale2 = ({ onclick }) => {
     'Sample text4',
   ]
   return (
-    <div className='bg-primary py-10 px-5 md:p-10 md:px-20 mt-10 wrapper'>
+    <div className='bg-white py-10 px-5 md:p-10 md:px-20 mt-10 wrapper'>
       <div className='mb-5 '>
         <p className='text-center md:text-left pb-1 bg-[#FF0b303c] md:px-5 pt-5 rounded-t-md'>
           Audited By:

@@ -16,6 +16,7 @@ body {
 .home-img{
   /* background:radial-gradient(#CCB089,#ABA372, #869762 ) ; */
   background: radial-gradient(#100702, #ABA372);
+  opacity: 0.5;
 }
 
 .aside{

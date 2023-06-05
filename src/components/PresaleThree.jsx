@@ -3,7 +3,7 @@ import Input from './Input'
 
 const PresaleThree = ({ onclick }) => {
   return (
-    <div className='bg-primary px-10 mt-10 py-10 md:px-20  wrapper'>
+    <div className='bg-white px-10 mt-10 py-10 md:px-20  wrapper'>
       <div>
         <Input
           label={'Enter amount of tokens available for presale'}
