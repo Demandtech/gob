@@ -1,7 +1,16 @@
+@font-face {
+  font-family: TildaSans;
+  src: url('TildaSans.07Web/TildaSans-Black.eot'),
+    url('TildaSans.07Web/TildaSans-Black.woff'),
+    url('TildaSans.07Web/TildaSans-Black.woff2');
+}
+
 body {
   position: relative;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: TildaSans;
+  background: linear-gradient(to left, #2c2925,#ccb089, #645744 );
 }
 
 .input-control input {
@@ -14,7 +23,7 @@ body {
   transition: ease-in-out 1s;
 }
 
-.App{
+.App {
   max-width: 1440px;
   margin: 0 auto;
 }

@@ -19,7 +19,7 @@ const Header = ({ title, page }) => {
         </div>
       </div>
      
-        <h1 className='title mt-5 text-center md:text-left text-white text-2xl md:text-4xl font-bold mb-2 after:'>
+        <h1 className='title mt-5 text-center md:text-left text-title text-2xl md:text-4xl font-bold mb-2 '>
           {title}
         </h1>
         
