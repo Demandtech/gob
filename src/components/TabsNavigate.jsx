@@ -25,13 +25,11 @@ const TabsNavigate = ({elIndex}) => {
         return (
           <div
             key={index}
-            className={'flex z-10 items-center gap-3 bg-[#0c2d36] px-3'}
+            className={'flex z-10 items-center gap-3 bg-[#100702] px-3'}
           >
             <div
               className={`w-8 h-8 grid place-content-center border-2 rounded-full border-primary leading-6 font-bold ${
-                elIndex === index
-                  ? 'bg-secondary-btn border-secondary-btn '
-                  : ''
+                elIndex === index ? 'bg-[#ccb089] border-secondary-btn ' : ''
               }`}
             >
               {d.num}
