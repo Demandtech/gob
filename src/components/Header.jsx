@@ -4,7 +4,7 @@ const Header = ({ title, page }) => {
   return (
     <header className=' py-10 w-full'>
       <div className='flex flex-col md:flex-row items-center text-primary justify-between gap-5'>
-        <div>
+        <div >
           <span>First Launchpad</span> / <strong>{page}</strong>
         </div>
         <div className='flex gap-4  items-center'>

@@ -1,27 +1,30 @@
 @font-face {
   font-family: TildaSans;
-  src: url('TildaSans.07Web/TildaSans-Black.eot'),
-    url('TildaSans.07Web/TildaSans-Black.woff'),
-    url('TildaSans.07Web/TildaSans-Black.woff2');
+  src: url('font/TildaSans-Bold.eot');
+  src: url('font/TildaSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('font/TildaSans-Bold.woff') format('woff'),
+    url('font/TildaSans-Bold.woff2') format('woff2');
 }
 
 body {
   position: relative;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: TildaSans;
   background: #100702;
 }
 
-.home-img{
+.title {
+  font-family: TildaSans;
+}
+
+.home-img {
   /* background:radial-gradient(#CCB089,#ABA372, #869762 ) ; */
   /* background: radial-gradient(#100702, #ABA372); */
   background: #1a1411;
-  border: 2px solid #CCB089
-  
+  border: 2px solid #ccb089;
 }
 
-.aside{
+.aside {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -89,8 +92,8 @@ body {
   border-radius: 8px;
 }
 
-.counter{
-  background: linear-gradient()
+.counter {
+  background: linear-gradient();
 }
 @tailwind base;
 @tailwind components;
