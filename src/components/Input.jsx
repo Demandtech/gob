@@ -1,5 +1,14 @@
-import { useState } from "react"
-const Input = ({ type, placeholder, label, name, info, onchange, value, className }) => {
+import { useState } from 'react'
+const Input = ({
+  type,
+  placeholder,
+  label,
+  name,
+  info,
+  onchange,
+  value,
+  className,
+}) => {
   const [selectedCurrency, setSelectedCurrency] = useState()
   if (type === 'radio') {
     return (
@@ -23,10 +32,14 @@ const Input = ({ type, placeholder, label, name, info, onchange, value, classNam
           </div>
         </div>
         {info && <p className='text-primary-btn mt-2'>{info}</p>}
-       
       </div>
     )
   }
+
+  // if (type === 'select') {
+  //   return null 
+  // }
+
   return (
     <>
       <div className='mb-3 input-control'>

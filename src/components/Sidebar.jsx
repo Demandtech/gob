@@ -145,7 +145,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='bg-background text-[#100702] flex items-center right-0 left-0  gap-5 md:hidden py-5 fixed'
+        className='bg-background text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -166,7 +166,7 @@ const Sidebar = () => {
         <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
-        className={`aside text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 fixed md:fixed bg-background`}
+        className={`aside text-primary min-h-screen bottom-0 top-[60px] md:top-0 transition-all duration-300 z-50 fixed md:fixed bg-background`}
       >
         <div
           className={`transition-all duration-150 ${
