@@ -31,7 +31,7 @@ const Input = ({ type, placeholder, label, name, info, onchange, value }) => {
     <>
       <div className='mb-3 input-control'>
         {type !== 'checkbox' && (
-          <label className='pb-2 block text-background text-xl' htmlFor={name}>
+          <label className='pb-1 block text-background' htmlFor={name}>
             {label}{' '}
           </label>
         )}

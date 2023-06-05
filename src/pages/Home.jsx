@@ -6,10 +6,10 @@ const Home = () => {
   return (
     <Layout>
       <div>
-        <Header page='Home' title='Blue Launchpad' />
-        <div className='bg-background flex items-center justify-center py-10 rounded-xl'>
-          <div>
-            <img src='https://i.ibb.co/wMfTQm9/LOGO2-edit.jpg' alt='' />
+        <Header page='Home' title='First Launchpad' />
+        <div className='bg-background  py-20 rounded-xl'>
+          <div className='w-2/3 mx-auto'>
+            <img src='https://i.ibb.co/hBS9bSh/BOOK.png' alt='logo' className='w-full object-cover'/>
           </div>
         </div>
         <Counter />

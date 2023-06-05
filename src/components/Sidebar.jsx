@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import menu from '../assets/svgs/menu-icon.svg'
-// import {FaBars} from 'react-icons/fa'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaArrowLeft } from 'react-icons/fa'
 import navArroIcon from '../assets/svgs/nav-arrow-icon.svg'
 import { Link } from 'react-router-dom'
 
@@ -36,7 +35,6 @@ const Sidebar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(null)
   const sidebarRef = useRef(null)
   function handleSidebar(event) {
-   
     setIsSidebarOpen((prev) => !prev)
   }
   function handleMenuOpen(index) {
@@ -44,7 +42,6 @@ const Sidebar = () => {
       setIsMenuOpen(index)
     }
   }
-  
 
   return (
     <>
@@ -52,16 +49,14 @@ const Sidebar = () => {
         className='bg-background text-primary flex gap-5 md:hidden p-5'
         onClick={(event) => handleSidebar(event)}
       >
-        <button className='h-5 ' type='button'>
+        <button className='h-5 w-5' type='button'>
           {!isSidebarOpen ? (
             <FaBars size={22} className='-rotate-45' />
           ) : (
-            <div className='w-5'>
-              <img className='w-full object-cover' src={navArroIcon} alt='' />
-            </div>
+            <FaArrowLeft size={22} />
           )}
         </button>
-        <p className='text-primary flex-1'>Blue Launchpad</p>
+        <p className='text-primary flex-1'>First Launchpad</p>
       </div>
       <aside
         id='aside'
@@ -77,23 +72,19 @@ const Sidebar = () => {
       `}
         >
           <div
-            className='mb-10 gap-5 hidden md:flex'
+            className='mb-10 gap-5 hidden md:flex items-center'
             onClick={(event) => handleSidebar(event)}
           >
-            <button className='h-5 ' type='button'>
+            <button className='h-10 ' type='button'>
               {!isSidebarOpen ? (
                 <FaBars size={22} className='-rotate-45' />
               ) : (
                 <div className='w-5'>
-                  <img
-                    className='w-full object-cover'
-                    src={navArroIcon}
-                    alt=''
-                  />
+                  <FaArrowLeft size={22} />
                 </div>
               )}
             </button>
-            <p>Blue Launchpad</p>
+            {isSidebarOpen && <p className='whitespace-nowrap'>First Launchpad</p>}
           </div>
 
           <ul className='flex flex-col gap-7'>
@@ -113,7 +104,11 @@ const Sidebar = () => {
                         />
                       </button>
                     </div>
-                    <Link to={nav.link}>{nav.name}</Link>
+                    {isSidebarOpen && (
+                      <Link className='whitespace-nowrap' to={nav.link}>
+                        {nav.name}
+                      </Link>
+                    )}
                   </div>
                   <ul
                     className={`${

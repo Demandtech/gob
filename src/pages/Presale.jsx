@@ -9,26 +9,20 @@ import { useState } from 'react'
 
 const Presale = () => {
   const [activeEl, setActiveEl] = useState(0)
+  const totalPage = 3
 
   const handlePage = (action) => {
-    console.log(action)
-    if (action === 'prev') {
-      console.log('prev')
-      if (activeEl === 0 ) {
-        setActiveEl(0)
-      } else if(activeEl > 0) {
-        setActiveEl(activeEl - 1)
-      }
-    } else if (action === 'next') {
-      console.log('clcicked')
-      if (activeEl < presalePage.length - 1) {
+    if (action === 'next') {
+      if (activeEl < totalPage) {
         setActiveEl(activeEl + 1)
-      } else {
-        setActiveEl(activeEl.length - 1)
       }
     }
-  }
 
+    if (action === 'prev') {
+      console.log(action)
+      setActiveEl((prev) => prev - 1)
+    }
+  }
   const presalePage = [
     <Presale1 onclick={handlePage} />,
     <Presale2 onclick={handlePage} />,

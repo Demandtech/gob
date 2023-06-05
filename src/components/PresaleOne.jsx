@@ -5,14 +5,13 @@ import { useState } from 'react'
 const PresaleOne = ({ onclick, onchange }) => {
   
   return (
-    <div className='bg-primary p-10 mt-10'>
+    <div className='bg-primary px-10  mt-10 py-10 md:px-28  wrapper'>
       <Input
         type='text'
         placeholder='Ex: 0x123456789ABCDEF'
         info='Pool creation fee: 1.23 TKN'
         name='pool'
         onChange={onchange}
-       
       />
       <Input
         type={'radio'}
@@ -21,12 +20,7 @@ const PresaleOne = ({ onclick, onchange }) => {
         onChange={onchange}
         value={'ETH'}
       />
-      <Input
-        type={'radio'}
-        name={'currency'}
-        label={'USDC'}
-        value={'USDC'}
-      />
+      <Input type={'radio'} name={'currency'} label={'USDC'} value={'USDC'} />
       <Input
         onChange={onchange}
         name={'currency'}
@@ -35,7 +29,7 @@ const PresaleOne = ({ onclick, onchange }) => {
         info={'Your users will pay with ETH for your token'}
       />
       <div className='text-center mt-5'>
-        <Button onclick={()=>onclick('next')} label={'Approve Token'} />
+        <Button onclick={() => onclick('next')} label={'Approve Token'} />
       </div>
     </div>
   )

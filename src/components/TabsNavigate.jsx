@@ -1,3 +1,4 @@
+
 const data = [
   {
     text: 'Verify Token',
@@ -16,19 +17,26 @@ const data = [
     num: 4,
   },
 ]
+
 const TabsNavigate = ({elIndex}) => {
   return (
-    <div className='flex justify-between flex-col items-center  md:flex-row relative  md:py-2 gap-3 text-primary'>
+    <div className='flex justify-between flex-col items-center  md:flex-row relative gap-3 text-primary'>
       {data.map((d, index) => {
         return (
           <div
             key={index}
-            className={'flex z-10 items-center gap-2 bg-[#0c2d36] md:px-5 md:first:px-0'}
+            className={'flex z-10 items-center gap-3 bg-[#0c2d36] px-3'}
           >
-            <div className={`w-10 h-10 grid place-content-center border-2 rounded-full border-primary ${elIndex === index ? 'bg-secondary-btn border-secondary-btn' : ''}`}>
+            <div
+              className={`w-8 h-8 grid place-content-center border-2 rounded-full border-primary leading-6 font-bold ${
+                elIndex === index
+                  ? 'bg-secondary-btn border-secondary-btn '
+                  : ''
+              }`}
+            >
               {d.num}
             </div>
-            <span className='first:pr-5'>{d.text}</span>
+            <span className='leading-6'>{d.text}</span>
           </div>
         )
       })}

@@ -6,15 +6,16 @@ import Presale from './pages/Presale'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Sidebar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/locker' element={<Locker />} />
-        <Route path='/presale' element={<Presale />} />
-      </Routes>
-     
-    </BrowserRouter>
+    <div className='App'>
+      <BrowserRouter>
+        <Sidebar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/locker' element={<Locker />} />
+          <Route path='/presale' element={<Presale />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 
