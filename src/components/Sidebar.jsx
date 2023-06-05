@@ -34,6 +34,7 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(null)
   const sidebarRef = useRef(null)
+
   function handleSidebar(event) {
     setIsSidebarOpen((prev) => !prev)
   }
@@ -43,24 +44,52 @@ const Sidebar = () => {
     }
   }
 
+  useEffect(() => {
+    if (!isSidebarOpen) {
+      setIsMenuOpen(null)
+    }
+    const handleOutsideClick = (event) => {
+      if (
+        isSidebarOpen &&
+        !event.target.closest('.aside') &&
+        !event.target.closest('.icon')
+      ) {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    window.addEventListener('click', handleOutsideClick)
+
+    return () => {
+      window.removeEventListener('click', handleOutsideClick)
+    }
+  }, [isSidebarOpen])
+
   return (
     <>
       <div
-        className='bg-background text-primary flex gap-5 md:hidden p-5'
+        className='bg-background text-primary flex items-center  gap-5 md:hidden p-5'
         onClick={(event) => handleSidebar(event)}
       >
-        <button className='h-5 w-5' type='button'>
+        <button
+          className='h-5 w-5 z-10 icon grid place-items-center relative'
+          type='button'
+        >
           {!isSidebarOpen ? (
-            <FaBars size={22} className='-rotate-45' />
+            <div className='icon'>
+              <FaBars size={22} className='-rotate-45 z-0' />
+            </div>
           ) : (
-            <FaArrowLeft size={22} />
+            <div className='icon z-0'>
+              <FaArrowLeft size={22} />
+            </div>
           )}
+          <div className='icon absolute top-0 h-full left-0 w-full'></div>
         </button>
         <p className='text-primary flex-1'>First Launchpad</p>
       </div>
       <aside
-        id='aside'
-        className={`text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 absolute md:fixed bg-background`}
+        className={`aside text-primary min-h-screen bottom-0 top-[64px] md:top-0 transition-all duration-300 z-50 absolute md:fixed bg-background`}
         ref={sidebarRef}
       >
         <div
@@ -75,16 +104,22 @@ const Sidebar = () => {
             className='mb-10 gap-5 hidden md:flex items-center'
             onClick={(event) => handleSidebar(event)}
           >
-            <button className='h-10 ' type='button'>
+            {/* I get Outside as console output when I click on this button and this button is inside aside element that I added event listener to */}
+            <button className='h-10 relative' type='button'>
               {!isSidebarOpen ? (
-                <FaBars size={22} className='-rotate-45' />
+                <div className='icon'>
+                  <FaBars size={22} className='-rotate-45 icon' />
+                </div>
               ) : (
-                <div className='w-5'>
+                <div className='icon'>
                   <FaArrowLeft size={22} />
                 </div>
               )}
+              <div className='icon absolute top-0 h-full left-0 w-full'></div>
             </button>
-            {isSidebarOpen && <p className='whitespace-nowrap'>First Launchpad</p>}
+            {isSidebarOpen && (
+              <p className='whitespace-nowrap'>First Launchpad</p>
+            )}
           </div>
 
           <ul className='flex flex-col gap-7'>
