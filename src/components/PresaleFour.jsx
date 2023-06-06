@@ -16,28 +16,33 @@ const PresaleFour = ({ onclick }) => {
 
         <div className='w-full'>
           <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
+            <div className='flex-1 mb-3'>
               <Input type={'text'} placeholder={0} label={'Upload logo'} />
-              <Input type={'checkbox'} label={'Upload file instead'} />
+              <div className='mt-2 ml-1'>
+                <Input type={'checkbox'} label={'Upload file instead'} />
+              </div>
             </div>
 
-            <div className='flex-1'>
+            <div className='flex-1 mb-3'>
               <Input placeholder={0} label={'Hardcap (ETH)'} />
-              <Input type={'checkbox'} label={'Upload file instead'} />
+              <div className='mt-2 ml-1'>
+                <Input type={'checkbox'} label={'Upload file instead'} />
+              </div>
             </div>
           </div>
-
-          <Input
-            placeholder={'Ex: t.me/yourlink'}
-            type={'text'}
-            label={'Telegram Link'}
-          />
+          <div className='mb-3'>
+            <Input
+              placeholder={'Ex: t.me/yourlink'}
+              type={'text'}
+              label={'Telegram Link'}
+            />
+          </div>
 
           <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
+            <div className='flex-1 mb-3'>
               <Input placeholder={'Ex: t.co/yourlink'} label={'Twitter Link'} />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 mb-3'>
               <Input
                 placeholder={'Ex: medium.com/yourmedium'}
                 label={'Medium Link'}
