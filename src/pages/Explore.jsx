@@ -2,6 +2,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Input from '../components/Input'
 import ProjectCard from '../components/ProjectCard'
+import Select from '../components/Select'
 
 const projects = [
   {
@@ -93,14 +94,10 @@ const Explore = () => {
       <Header page={'Explore Presales'} title={'Explore other projects'} />
       <div>
         <Input placeholder={'Search'} type={'text'} />
-        <div className='flex w-2/3'>
-          <Input
-            className={'text-white'}
-            label={'Filter by:'}
-            type={'select'}
-          />
-          <Input className={'text-white'} type={'select'} label={'Sort by'} />
-          <Input className={'text-white'} type={'select'} label={'Chain'} />
+        <div className='flex w-full md:w-2/3 gap-5 flex-col md:flex-row pt-2 pb-10'>
+          <Select placeholder={'No filter'} />
+          <Select placeholder={'No filter'} />
+          <Select placeholder={'No filter'} />
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5'>
           {projects.map((pro, index) => {

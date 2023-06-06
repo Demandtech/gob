@@ -13,10 +13,10 @@ const Input = ({
   if (type === 'radio') {
     return (
       <div>
-        <div className='flex items-center space-x-2 relative focus:-translate-y-1'>
+        <div className='flex w-full items-center gap-2 relative focus:-translate-y-1'>
           <input
             placeholder={placeholder}
-            className={`border border-gray700 p-2`}
+            className={`border border-gray700 p-2 scale-150`}
             type={type}
             name={name}
             onChange={onchange}
@@ -36,23 +36,21 @@ const Input = ({
     )
   }
 
-  // if (type === 'select') {
-  //   return null 
-  // }
+  
 
   return (
     <>
-      <div className='mb-3 input-control'>
+      <div className=' input-control w-full'>
         {type !== 'checkbox' && (
           <label className={`pb-1 block text-dark ${className}`} htmlFor={name}>
             {label}{' '}
           </label>
         )}
-        <div className='flex items-center space-x-2 relative focus:-translate-y-1'>
+        <div className='flex items-center gap-3 relative focus:-translate-y-1'>
           <input
             placeholder={placeholder}
             className={`${
-              type !== 'checkbox' ? 'w-full' : null
+              type !== 'checkbox' ? 'w-full' : 'scale-150'
             }  border border-gray700 p-2`}
             type={type}
             name={name}

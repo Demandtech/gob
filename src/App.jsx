@@ -5,6 +5,7 @@ import Locker from './pages/Locker'
 import Presale from './pages/Presale'
 import Explore from './pages/Explore'
 import ProjectName from './pages/ProjectName'
+import SinglePresale from './pages/SinglePresale'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/locker' element={<Locker />} />
           <Route path='/presale' element={<Presale />} />
+          <Route path='/single' element={<SinglePresale /> } />
           <Route path='/explore' element={<Explore />} />
           <Route path='/project' element={<ProjectName />} />
         </Routes>

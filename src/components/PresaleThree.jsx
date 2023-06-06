@@ -1,5 +1,6 @@
 import Button from './Button'
 import Input from './Input'
+import Select from './Select'
 
 const PresaleThree = ({ onclick }) => {
   return (
@@ -45,11 +46,11 @@ const PresaleThree = ({ onclick }) => {
             </div>
           </div>
           <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
-              <Input label={'Refund type'} type={'select'} />
+            <div className='flex-1 pb-3'>
+              <Select label={'Refund type'} />
             </div>
-            <div className='flex-1'>
-              <Input label={'Presalerate'} type={'select'} />
+            <div className='flex-1 pb-3'>
+              <Select label={'Presalerate'} />
             </div>
           </div>
 

@@ -1,5 +1,7 @@
 import React from 'react'
 import projectImg from '../assets/project-bg.png'
+import { Link } from 'react-router-dom'
+
 
 const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
   return (
@@ -28,9 +30,9 @@ const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
         <p>{refund}</p>
         <p>{days}</p>
         <div className='text-center my-5'>
-          <a className='project-btn bg-black text-white px-4 rounded-md py-2' href='#'>
+          <Link to='/single' className='project-btn bg-black text-white px-4 rounded-md py-2' href='#'>
             View Presale
-          </a>
+          </Link>
         </div>
       </div>
     </div>
