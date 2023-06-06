@@ -11,6 +11,7 @@ export default {
         'primary-btn': '#45c2e8',
         'secondary-btn': '#031217',
         title: '#ccb089',
+        goldbg: 'rgba(218, 165, 32, 0.5)',
         // title: '#2c2925',
       },
     },
