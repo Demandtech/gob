@@ -200,12 +200,12 @@ const tabs = [
   },
 ]
 
-const option = {
+export const option = {
   filterBy: [
     'No Filter',
     'KYC',
     'Upcoming',
-    'Inprogress',
+    'Progress',
     'Filled',
     'Ended',
     'Cancelled',
@@ -260,7 +260,7 @@ const BasicTabs = () => {
 
       <div className='hidden md:block h-[1.5px] w-full bg-gray-500 -translate-y-0.5'></div>
       <div className='mt-10 flex items-end flex-col md:flex-row'>
-        <div className='md:w-1/3 lg:w-3/4 w-full'>
+        <div className='md:w-1/3 lg:w-3/4 w-full mb-2 md:mb-0'>
           <Input
             placeholder={'Enter token name or token symbol'}
             className={'mb-0'}
@@ -271,25 +271,26 @@ const BasicTabs = () => {
             option={option.filterBy}
             label={'Filter By'}
             placeholder={'All status'}
+            className={'text-dark'}
           />
           <Select
             option={option.sortBy}
             label={'Sort By'}
             placeholder={'All status'}
+            className={'ttext-dark'}
           />
           <Select
             option={option.chain}
             label={'Chain'}
             placeholder={'All status'}
+            className={'text-dark'}
           />
         </div>
       </div>
       <div className='pt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {projects.projects.map((pro, index) => {
           console.log(pro)
-          return (
-            <SinglePresaleCard {...pro} key={index}/>
-          )
+          return <SinglePresaleCard {...pro} key={index} />
         })}
       </div>
     </section>

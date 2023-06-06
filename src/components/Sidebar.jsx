@@ -73,6 +73,7 @@ const Sidebar = () => {
   const [isMenuOpenTwo, setIsMenuOpenTwo] = useState(false)
   const menuRef = useRef(null)
   const innerMenuRef = useRef(null)
+  const [disableScroll, setDisableScroll] = useState(false)
 
   const menuRefTwo = useRef(null)
   const innerMenuRefTwo = useRef(null)
@@ -142,6 +143,21 @@ const Sidebar = () => {
     }
   }, [isSidebarOpen])
 
+  const handleMouseEnter = () => {
+    setDisableScroll(true)
+  }
+
+  const handleMouseLeave = () => {
+    setDisableScroll(false)
+  }
+
+  // Apply the 'disable-scroll' class to the body element if scrolling is disabled
+  if (disableScroll) {
+    document.body.classList.add('disable-scroll')
+  } else {
+    document.body.classList.remove('disable-scroll')
+  }
+
   return (
     <>
       <div
@@ -167,6 +183,8 @@ const Sidebar = () => {
       </div>
       <aside
         className={`aside text-primary min-h-screen bottom-0 top-[60px] md:top-0 transition-all duration-300 z-50 fixed md:fixed bg-background`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div
           className={`transition-all duration-150 ${

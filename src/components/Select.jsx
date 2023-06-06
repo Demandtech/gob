@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 
-const Select = ({ placeholder, option, label }) => {
+const Select = ({ placeholder, option, label, className }) => {
   const [isOpenSelect, setIsOpenSelect] = useState()
   const [value, setValue] = useState()
   const containerRef = useRef(null)
@@ -17,8 +17,8 @@ const Select = ({ placeholder, option, label }) => {
   }, [isOpenSelect])
 
   return (
-    <div className='w-full pr-2 relative input-control '>
-      {label && <label className='mb-1 block'>{label}</label>}
+    <div className={`w-full pr-2 relative input-control ${className}`}>
+      {label && <label className='mb-1 block text-primary'>{label}</label>}
       <div className='relative ' onClick={() => setIsOpenSelect(!isOpenSelect)}>
         <input
           placeholder={placeholder}
@@ -40,7 +40,8 @@ const Select = ({ placeholder, option, label }) => {
             {option?.map((opt, index) => {
               return (
                 <li
-                  className={`py-2 hover:bg-[#fdf7f1] cursor-pointer ${
+                  key={index}
+                  className={`py-2 hover:bg-[#fdf7f1] cursor-pointer text-black ${
                     isOpenSelect ? 'p-5' : 'opacity-0'
                   }  ${option[index] == value ? 'bg-orange-100' : ''}`}
                   onClick={() => {
