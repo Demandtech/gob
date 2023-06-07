@@ -3,7 +3,7 @@ import topImg from '../assets/topproject-img.png'
 
 const TopProjectName = () => {
   return (
-    <div className='flex flex-col md:flex-row gap-10 top-project border-[#efd2ad] pb-10 bg-[#100702] border-2 px-3 pt-3 rounded-md'>
+    <div className='flex flex-col md:flex-row gap-10 top-project border-[#efd2ad] pb-10 bg-[#100702] border-2 px-3 pt-3 rounded-md goldcardshadow'>
       <div className='md:w-3/5'>
         <img src={topImg} alt='image' className='w-full mb-4' />
         <p className='text-white'>

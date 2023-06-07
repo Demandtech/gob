@@ -45,12 +45,13 @@ body {
   border-radius: 10px;
   overflow: hidden;
   border-image: linear-gradient(
-    126deg,
-    rgba(187, 160, 123, 1) 0%,
-    rgba(230, 212, 173, 1) 32%,
-    rgba(204, 176, 137, 1) 68%,
-    rgba(230, 212, 173, 1) 100%
-  ) 1;
+      126deg,
+      rgba(187, 160, 123, 1) 0%,
+      rgba(230, 212, 173, 1) 32%,
+      rgba(204, 176, 137, 1) 68%,
+      rgba(230, 212, 173, 1) 100%
+    )
+    1;
 }
 
 .home-img::before {
@@ -66,20 +67,27 @@ body {
   position: absolute;
   overflow: hidden;
   border-image: linear-gradient(
-    126deg,
-    rgba(187, 160, 123, 1) 0%,
-    rgba(230, 212, 173, 1) 32%,
-    rgba(204, 176, 137, 1) 68%,
-    rgba(230, 212, 173, 1) 100%
-  ) 1;
+      126deg,
+      rgba(187, 160, 123, 1) 0%,
+      rgba(230, 212, 173, 1) 32%,
+      rgba(204, 176, 137, 1) 68%,
+      rgba(230, 212, 173, 1) 100%
+    )
+    1;
   border-radius: 10px;
-  
 }
 
 .home-img img {
   width: 100%;
   object-fit: cover;
   opacity: 0.6;
+}
+
+.goldcardshadow {
+  box-shadow: inset 0 0 5px 5px rgba(239, 210, 173, 0.5);
+/* box-shadow: 0 0 5px 5px red; */
+  /* box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
+            
 }
 
 .aside {
