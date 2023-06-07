@@ -3,17 +3,25 @@ import Layout from '../components/Layout'
 import { Counter } from '../components/Counter'
 import img from '../assets/logo.png'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
+
 const Home = () => {
+
+  useEffect(() => {
+    Aos.init({duration: 1000})
+  })
   return (
     <Layout>
       <div>
         <Header page='Home' title='First Launchpad' />
-        <div className='rounded-xl home-img overflow-hidden h-[500px]'>
+        <div className='rounded-xl home-img overflow-hidden h-[500px]' data-aos="zoom-in">
           <div className='w-full h-full'>
             <img
               src={img}
               alt='logo'
-              className='w-full h-full object-contain'
+              className='w-full h-full object-contain '
               loading='lazy'
             />
           </div>

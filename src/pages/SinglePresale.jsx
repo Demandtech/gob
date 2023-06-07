@@ -5,6 +5,9 @@ import Select from '../components/Select'
 import Input from '../components/Input'
 import SinglePresaleCard from '../components/SinglePresaleCard'
 
+import bnbSvg from '../assets/svgs/bnb.svg'
+import ethSvg  from '../assets/svgs/ethereum.svg'
+
 const SinglePresale = () => {
   return (
     <Layout>
@@ -31,6 +34,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: true,
+        icon: bnbSvg,
       },
       {
         name: 'Advance Mode 2',
@@ -45,6 +49,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: true,
+        icon: ethSvg,
       },
       {
         name: 'Advance Mode 3',
@@ -59,6 +64,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: false,
+        icon: ethSvg,
       },
       {
         name: 'Contributor One',
@@ -73,6 +79,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: true,
+        icon: bnbSvg,
       },
       {
         name: 'Contributor Two',
@@ -87,6 +94,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: true,
+        icon: bnbSvg,
       },
       {
         name: 'Contributor Three',
@@ -101,6 +109,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: false,
+        icon: ethSvg,
       },
       {
         name: 'Contributor Four',
@@ -115,6 +124,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: true,
+        icon: ethSvg,
       },
     ],
   },
@@ -134,6 +144,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: true,
+        icon: ethSvg,
       },
       {
         name: 'Advance Mode 2',
@@ -148,6 +159,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: true,
+        icon: bnbSvg,
       },
       {
         name: 'Advance Mode 3',
@@ -160,6 +172,9 @@ const tabs = [
         liquidity: 51,
         lockTime: '90days',
         saleStart: '00:01:19',
+        audit: true,
+        kyc: true,
+        icon: bnbSvg,
       },
     ],
   },
@@ -179,6 +194,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: true,
+        icon: ethSvg,
       },
       {
         name: 'Contributor Two',
@@ -193,6 +209,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: true,
+        icon: ethSvg,
       },
       {
         name: 'Contributor Three',
@@ -207,6 +224,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: false,
         kyc: true,
+        icon: bnbSvg,
       },
       {
         name: 'Contributor Four',
@@ -221,6 +239,7 @@ const tabs = [
         saleStart: '00:01:19',
         audit: true,
         kyc: false,
+        icon: bnbSvg,
       },
     ],
   },

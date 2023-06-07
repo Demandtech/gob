@@ -161,7 +161,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='bg-background text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50'
+        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -182,7 +182,7 @@ const Sidebar = () => {
         <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
-        className={`aside text-primary min-h-screen bottom-0 top-[60px] md:top-0 transition-all duration-300 z-50 fixed md:fixed bg-background`}
+        className={`aside text-primary min-h-screen bottom-0 top-[60px] md:top-0 transition-all duration-300 z-50 fixed md:fixed `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -218,16 +218,16 @@ const Sidebar = () => {
           </div>
 
           <ul className='flex flex-col text-[#100702] '>
-            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
+            <li className='flex gap-5 mb-5 cursor-pointer px-5 hover:text-[#8B4513]'>
               <div>
                 <FcHome size={20} />
               </div>
               <Link to={'/'}>Home</Link>
             </li>
             <li
-              className={` gap-2  mb-5 px-5 py-1 ${
+              className={` gap-2  mb-5 px-5 py-1 hover:text-[#8B4513] transition-all duration-150 ${
                 isMenuOpen ? 'bg-[#ccab72] drop-down' : 'bg-dark'
-              }`}
+              } `}
               onClick={handleMenuOpen}
             >
               <div className='flex gap-2 items-center cursor-pointer'>
@@ -270,7 +270,7 @@ const Sidebar = () => {
 
             <li
               onClick={handleMenuOpenTwo}
-              className={`mb-5 px-5 py-1 ${
+              className={`mb-5 px-5 py-1 hover:text-[#8B4513] transition-all duration-150 ${
                 isMenuOpenTwo ? 'drop-down bg-[#ccab72]' : 'bg-dark'
               }`}
             >
@@ -305,25 +305,25 @@ const Sidebar = () => {
               </div>
             </li>
 
-            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
+            <li className='hover:text-[#8B4513] transition-all duration-150 flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FaTelegramPlane size={20} />
               </div>
               <span>Telegram</span>
             </li>
-            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
+            <li className='hover:text-[#8B4513] transition-all duration-150 flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FiTwitter size={20} />
               </div>
               <Link>Twitter</Link>
             </li>
-            <li className='flex gap-5 mb-5 cursor-pointer px-5'>
+            <li className='hover:text-[#8B4513] transition-all duration-150 flex gap-5 mb-5 cursor-pointer px-5'>
               <div>
                 <FaMedium size={20} />
               </div>
               <Link>Medium</Link>
             </li>
-            <li className='flex gap-5 cursor-pointer px-5'>
+            <li className='hover:text-[#8B4513] transition-all duration-150 flex gap-5 cursor-pointer px-5'>
               <div>
                 <FaChartLine size={20} />
               </div>

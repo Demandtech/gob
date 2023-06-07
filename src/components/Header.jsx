@@ -8,7 +8,7 @@ const Header = ({ title, page }) => {
           <span>First Launchpad</span> / <strong>{page}</strong>
         </div>
         <div className='flex items-center gap-4'>
-          <button className='hover:-translate-y-0.5 bg-[#ccb089] text-[#100702] px-3 py-1 rounded-md flex items-center gap-2  transition-all delay-150 flex-1'>
+          <button className='hover:-translate-y-0.5 primary-btn text-[#100702] px-3 py-1 rounded-md flex items-center gap-2  transition-all delay-150 flex-1'>
             <FaWallet className='text-[#100702]' />
             Connect Wallet
           </button>

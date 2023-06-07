@@ -1,3 +1,6 @@
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 const projects = [
   {
     count: '$481.1M',
@@ -18,16 +21,34 @@ const projects = [
 ]
 
 export const Counter = () => {
+  
+  useEffect(() => {
+    Aos.init({ duration: 300 })
+  })
   return (
-    <div className='bg-[#ccb089] flex justify-between  p-5 mt-5 rounded-xl flex-col md:flex-row shadow-md gap-5 counterEl'>
+    <div className='flex justify-between  py-5 mt-5 rounded-xl flex-col md:flex-row shadow-md gap-5 counterEl'>
       {projects.map((pro, index) => {
+        let animation = ''
+        if (index == 0) {
+          animation = 'fade-right'
+        } else if (index == 1) {
+          animation = 'fade-down'
+        } else if (index == 2) {
+          animation = 'fade-up'
+        } else if (index == 3) {
+          animation = 'fade-left'
+        }
         return (
           <div
+            data-aos={animation}
+            data-aos-easing='linear'
             key={index}
-            className='text-center text-white shadow-md p-3 rounded-md flex-1'
+            className='text-center p-3 flex-1 counter-card'
           >
-            <h2 className='font-bold text-3xl '>{pro.count}</h2>
-            <p>{pro.text}</p>
+            <h2 className='counter-number font-bold'>{pro.count}</h2>
+            <p className='uppercase font-semibold text-[#8b4513] text-sm'>
+              {pro.text}
+            </p>
           </div>
         )
       })}

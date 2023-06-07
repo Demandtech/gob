@@ -1,8 +1,9 @@
 import React from 'react'
 import Input from '../components/Input'
 import Button from '../components/Button'
+import { MdContentCopy } from 'react-icons/md'
 
-const lineList = [
+export const lineList = [
   {
     tag: 'Manual Listing',
     text: 'Liquidity will not be automatically added',
@@ -68,7 +69,11 @@ const CenterProjectName = () => {
         <div className='md:w-3/5 border-2 border-white rounded-md px-4 mt-4'>
           {lineList.map((line, index) => {
             return (
-              <Line {...line} key={index} className={'flex-col md:flex-row text-white'} />
+              <Line
+                {...line}
+                key={index}
+                className={'flex-col md:flex-row text-white'}
+              />
             )
           })}
         </div>
@@ -82,13 +87,25 @@ const CenterProjectName = () => {
   )
 }
 
-export const Line = ({ tag, text, className }) => {
+export const Line = ({ tag, text, className, info, wallet }) => {
   return (
     <div
-      className={`flex   justify-between border-b border-[#ccb089] py-3 ${className}`}
+      className={`flex   justify-between border-b border-[#ccb089] py-2 ${className}`}
     >
-      <p>{tag}</p>
-      <p>{text}</p>
+      <div>
+        <p>{tag}</p>
+      </div>
+      <div className='text-right'>
+        <div className='flex justify-end gap-2'>
+          <p className={`${wallet && ' text-[#f95e9f]'}`}>{text}</p>
+          {wallet && (
+            <button>
+              <MdContentCopy className='text-[#f95e9f]' />
+            </button>
+          )}
+        </div>
+        {info && <p className='text-primary-btn'>{info}</p>}
+      </div>
     </div>
   )
 }
