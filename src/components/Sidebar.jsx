@@ -187,7 +187,7 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className={`transition-all duration-150 ${
+          className={`transition-all h-full duration-150 relative ${
             !isSidebarOpen
               ? 'w-0 md:w-[60px] pt-5 md:pt-10 overflow-hidden'
               : 'w-[230px] pt-5 md:pt-10'
@@ -330,6 +330,9 @@ const Sidebar = () => {
               <Link className='whitespace-nowrap'>Base Chart</Link>
             </li>
           </ul>
+          <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400'>
+           $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
+        </div>
         </div>
       </aside>
     </>
