@@ -44,7 +44,6 @@ body {
   border: 2px solid;
   border-radius: 10px;
   overflow: hidden;
-  
 }
 
 /* .home-img::before {
@@ -78,9 +77,8 @@ body {
 
 .goldcardshadow {
   box-shadow: inset 0 0 5px 5px rgba(239, 210, 173, 0.5);
-/* box-shadow: 0 0 5px 5px red; */
-  /* box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6); */
-            
+  -webkit-box-shadow: inset 0 0 5px 5px rgba(239, 210, 173, 0.5);
+  -moz-box-shadow: inset 0 0 5px 5px rgba(239, 210, 173, 0.5);
 }
 
 .aside {
@@ -95,6 +93,21 @@ body {
   );
   /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
+}
+
+.typing-effect {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: 'Enchanted Land', sans-serif;
+  background: linear-gradient(
+    126deg,
+    rgba(187, 160, 123, 1) 0%,
+    rgba(230, 212, 173, 1) 32%,
+    rgba(204, 176, 137, 1) 68%,
+    rgba(230, 212, 173, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .top-aside,

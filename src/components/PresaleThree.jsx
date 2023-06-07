@@ -6,17 +6,19 @@ const PresaleThree = ({ onclick }) => {
   return (
     <div className='bg-white px-10 mt-10 py-10 md:px-20  wrapper'>
       <div>
-        <Input
-          label={'Enter amount of tokens available for presale'}
-          placeholder={0}
-        />
+        <div className='mb-2'>
+          <Input
+            label={'Enter amount of tokens available for presale'}
+            placeholder={0}
+          />
+        </div>
         <Input
           label='Presale rate'
           placeholder={0}
           info='1 ETH : X Tokens ratio'
         />
         <p>Whitelist</p>
-        <div className='flex gap-2'>
+        <div className='flex gap-2 pl-1 my-2'>
           <Input type='radio' label='Enable' />
           <Input type='radio' label='Disable' />
         </div>
@@ -33,32 +35,32 @@ const PresaleThree = ({ onclick }) => {
               />
             </div>
 
-            <div className='flex-1'>
+            <div className='flex-1 mb-2'>
               <Input placeholder={0} label={'Hardcap (ETH)'} />
             </div>
           </div>
           <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
+            <div className='flex-1 mb-2'>
               <Input placeholder={0} label={'Minimum buy (ETH)'} />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 mb-2'>
               <Input placeholder={0} label={'Maximum buy (ETH)'} />
             </div>
           </div>
           <div className='flex flex-col md:flex-row'>
             <div className='flex-1 pb-3'>
-              <Select label={'Refund type'} />
+              <Select label={'Refund type'} blackLabel/>
             </div>
             <div className='flex-1 pb-3'>
-              <Select label={'Presalerate'} />
+              <Select label={'Presalerate'} blackLabel/>
             </div>
           </div>
 
           <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
+            <div className='flex-1 mb-2'>
               <Input placeholder={0} label={'Liquidity (%)'} />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 mb-2'>
               <Input
                 info={'1 ETH = 0 QR68'}
                 placeholder={0}
@@ -79,11 +81,11 @@ const PresaleThree = ({ onclick }) => {
           </p>
           <p>Select start time & end time (UTC)</p>
         </div>
-        <div className='flex flex-col md:flex-row'>
-          <div className='flex-1'>
+        <div className='flex flex-col md:flex-row md:mb-2'>
+          <div className='flex-1 mb-2 md:mb-0'>
             <Input type={'date'} label={'Start time (UTC)'} />
           </div>
-          <div className='flex-1'>
+          <div className='flex-1 mb-2 md:mb-0'>
             <Input type={'date'} label={'End time (UTC)'} />
           </div>
         </div>

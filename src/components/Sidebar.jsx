@@ -137,6 +137,7 @@ const Sidebar = () => {
     }
 
     window.addEventListener('click', handleOutsideClick)
+    
 
     return () => {
       window.removeEventListener('click', handleOutsideClick)
@@ -151,7 +152,15 @@ const Sidebar = () => {
     setDisableScroll(false)
   }
 
-  // Apply the 'disable-scroll' class to the body element if scrolling is disabled
+  const handleTouchStart = () => {
+    setDisableScroll(true)
+  }
+
+  const handleTouchEnd = () => {
+    setDisableScroll(false)
+  }
+
+
   if (disableScroll) {
     document.body.classList.add('disable-scroll')
   } else {
@@ -185,6 +194,8 @@ const Sidebar = () => {
         className={`aside text-primary min-h-screen bottom-0 top-[63px] border-t-2 border-[#ccab72] md:top-0 transition-all duration-300 z-50 fixed md:fixed `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <div
           className={`transition-all h-full duration-150 relative ${
@@ -237,12 +248,13 @@ const Sidebar = () => {
                   </div>
                   <span>LaunchPad</span>
                 </div>
-                <div>
+                <div className='relative'>
                   {isMenuOpen ? (
                     <FaChevronDown size={10} />
                   ) : (
                     <FaChevronUp size={10} />
                   )}
+                  <div className='absolute top-0 h-full w-full'></div>
                 </div>
               </div>
               <div
@@ -281,12 +293,13 @@ const Sidebar = () => {
                   </div>
                   <span>Lock</span>
                 </div>
-                <div>
+                <div className='relative'>
                   {isMenuOpenTwo ? (
                     <FaChevronDown size={10} />
                   ) : (
                     <FaChevronUp size={10} />
                   )}
+                  <div className='absolute top-0 h-full w-full'></div>
                 </div>
               </div>
               <div

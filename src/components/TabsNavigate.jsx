@@ -29,7 +29,9 @@ const TabsNavigate = ({elIndex}) => {
           >
             <div
               className={`w-8 h-8 grid place-content-center border-2 rounded-full border-primary leading-6 font-bold ${
-                elIndex === index ? 'bg-[#ccb089] border-secondary-btn ' : ''
+                elIndex === index
+                  ? 'gold-bg border-secondary-btn goldcardshadow'
+                  : ''
               }`}
             >
               {d.num}

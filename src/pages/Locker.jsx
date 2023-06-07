@@ -14,7 +14,9 @@ const Locker = () => {
           label='Token or LP Token Address'
           name='token'
         />
-        <Input type='checkbox' label='Use other owner' name='owner' />
+        <div className='pl-1 my-2'>
+          <Input type='checkbox' label='Use other owner' name='owner' />
+        </div>
 
         <Input type='text' placeholder='Ex:My lock' label='Title' />
 
@@ -25,7 +27,9 @@ const Locker = () => {
           name='amount'
           info={' Remaining tokens: 9999'}
         />
-        <Input type='checkbox' label='Use vesting' name={'vesting'} />
+        <div className='pl-1 my-2'>
+          <Input type='checkbox' label='Use vesting' name={'vesting'} />
+        </div>
         <Input
           label='Lock until (UTC time)'
           type='date'
