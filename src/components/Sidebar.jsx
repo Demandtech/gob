@@ -182,7 +182,7 @@ const Sidebar = () => {
         <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
-        className={`aside text-primary min-h-screen bottom-0 top-[60px] md:top-0 transition-all duration-300 z-50 fixed md:fixed `}
+        className={`aside text-primary min-h-screen bottom-0 top-[63px] border-t-2 border-[#ccab72] md:top-0 transition-all duration-300 z-50 fixed md:fixed `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
