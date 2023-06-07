@@ -116,9 +116,11 @@ const LeftTopBox = () => {
       <h2 className='text-3xl font-bold '>Contribute to Presale</h2>
       <p>Max buy: 123 ETH</p>
       <div>
-        <Input name='amount' placeholder={'Amount to buy (ETH)'} />
-        <div>
-          <button className='hover:-translate-y-0.5 bg-[#ccb089] text-[#100702] px-3 py-1 rounded-md  gtransition-all delay-150 w-full text-center mb-5'>
+        <div className='mb-4'>
+          <Input name='amount' placeholder={'Amount to buy (ETH)'} />
+        </div>
+        <div className='pr-3'>
+          <button className='hover:-translate-y-0.5 bg-[#ccb089] text-[#100702] px-3 py-1 rounded-md  gtransition-all delay-150 w-full text-center mb-5 '>
             Contribute to Presale
           </button>
           <button className='hover:-translate-y-0.5 bg-white text-black px-5 py-1 rounded-md transition-all delay-150 w-full'>

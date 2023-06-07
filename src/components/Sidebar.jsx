@@ -330,9 +330,11 @@ const Sidebar = () => {
               <Link className='whitespace-nowrap'>Base Chart</Link>
             </li>
           </ul>
-          <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400'>
-           $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
-        </div>
+          {isSidebarOpen && (
+            <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400 whitespace-nowrap'>
+              $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
+            </div>
+          )}
         </div>
       </aside>
     </>
