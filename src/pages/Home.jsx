@@ -16,7 +16,10 @@ const Home = () => {
     <Layout>
       <div>
         <Header page='Home' title='First Launchpad' />
-        <div className='rounded-xl home-img overflow-hidden h-[500px]' data-aos="zoom-in">
+        <div
+          className='rounded-xl home-img overflow-hidden md:h-[500px] goldcardshadow'
+          data-aos='zoom-in'
+        >
           <div className='w-full h-full'>
             <img
               src={img}

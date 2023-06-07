@@ -44,17 +44,10 @@ body {
   border: 2px solid;
   border-radius: 10px;
   overflow: hidden;
-  border-image: linear-gradient(
-      126deg,
-      rgba(187, 160, 123, 1) 0%,
-      rgba(230, 212, 173, 1) 32%,
-      rgba(204, 176, 137, 1) 68%,
-      rgba(230, 212, 173, 1) 100%
-    )
-    1;
+  
 }
 
-.home-img::before {
+/* .home-img::before {
   content: '';
   top: -2px;
   left: -2px;
@@ -75,7 +68,7 @@ body {
     )
     1;
   border-radius: 10px;
-}
+} */
 
 .home-img img {
   width: 100%;
