@@ -331,8 +331,10 @@ const Sidebar = () => {
             </li>
           </ul>
           {isSidebarOpen && (
-            <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400 whitespace-nowrap'>
-              $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
+            <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400 whitespace-nowrap text-sm text-center'>
+              <p>
+                $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
+              </p>
             </div>
           )}
         </div>
