@@ -1,11 +1,27 @@
 @import url('https://fonts.cdnfonts.com/css/enchanted-land');
 
 @font-face {
-  font-family: TildaSans;
+  font-family: tildaNormal;
+  src: url('font/TildaSans-Regular.eot');
+  src: url('font/TildaSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('font/TildaSans-Regular.woff') format('woff'),
+    url('font/TildaSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: tildaBold;
   src: url('font/TildaSans-Bold.eot');
   src: url('font/TildaSans-Bold.eot?#iefix') format('embedded-opentype'),
     url('font/TildaSans-Bold.woff') format('woff'),
     url('font/TildaSans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: tildaMedium;
+  src: url('font/TildaSans-Medium.eot');
+  src: url('font/TildaSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('font/TildaSans-Medium.woff') format('woff'),
+    url('font/TildaSans-Medium.woff2') format('woff2');
 }
 
 *,
@@ -21,6 +37,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   background: #100702;
+  font-family: tildaNormal, tildaMedium, tildaNormal, sans-serif;
 }
 
 .title {
@@ -37,37 +54,12 @@ body {
 }
 
 .home-img {
-  /* background:radial-gradient(#CCB089,#ABA372, #869762 ) ; */
-  /* background: radial-gradient(#100702, #ABA372); */
   position: relative;
   background: #1a1411;
   border: 2px solid;
   border-radius: 10px;
   overflow: hidden;
 }
-
-/* .home-img::before {
-  content: '';
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  z-index: -1;
-  position: relative;
-  background: #1a1411;
-  border: 2px solid;
-  position: absolute;
-  overflow: hidden;
-  border-image: linear-gradient(
-      126deg,
-      rgba(187, 160, 123, 1) 0%,
-      rgba(230, 212, 173, 1) 32%,
-      rgba(204, 176, 137, 1) 68%,
-      rgba(230, 212, 173, 1) 100%
-    )
-    1;
-  border-radius: 10px;
-} */
 
 .home-img img {
   width: 100%;
@@ -82,8 +74,6 @@ body {
 }
 
 .aside {
-  /* box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15); */
-  /* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.5); */
   background: linear-gradient(
     126deg,
     rgba(187, 160, 123, 1) 0%,
@@ -91,8 +81,6 @@ body {
     rgba(204, 176, 137, 1) 68%,
     rgba(230, 212, 173, 1) 100%
   );
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 
 .typing-effect {
@@ -138,15 +126,11 @@ body {
 
 .input-control input,
 .select {
-  /* box-shadow: 0px 4px 4px rgba(15, 23, 42, 0.3); */
   border-radius: 4px;
-  /* box-shadow: inset 0px 0px 3px 2px rgba(0, 0, 0, 0.5); */
-  /* box-shadow: inset 0px 0px 3px 2px rgba(218, 165, 32, 0.5); */
   box-shadow: 0px 1px 2px rgba(15, 23, 42, 0.3);
 }
 .input-control input:focus {
   outline: none;
-  /* transform: translateY(-2px); */
   transition: ease-in-out 0.3s;
   box-shadow: 0px 0px 3px 2px rgba(218, 165, 32, 0.5);
 }
@@ -154,27 +138,6 @@ body {
 .App {
   max-width: 1440px;
   margin: 0 auto;
-}
-
-.gradient {
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 120px;
-  width: 120px;
-  position: absolute;
-  right: -50px;
-  top: -50px;
-  border-radius: 50%;
-  box-shadow: 2px 2px 15px #eef2f3;
 }
 
 .gold-bg {
@@ -197,17 +160,25 @@ body {
 
 .counter-card {
   background-color: #210c05;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
-  /* border: 2px solid; */
-  /* border-image: linear-gradient(
+  border-radius: 10px;
+}
+
+.counter-number {
+  font-family: tildaBold, sans-serif;
+  font-size: 45px;
+  background: linear-gradient(
     126deg,
     rgba(187, 160, 123, 1) 0%,
     rgba(230, 212, 173, 1) 32%,
     rgba(204, 176, 137, 1) 68%,
     rgba(230, 212, 173, 1) 100%
-  ) 1; */
-  border-radius: 10px;
-  /* overflow: hidden; */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page {
+  font-family: tildaBold, sans-serif;
 }
 
 @keyframes blink {
@@ -242,51 +213,14 @@ body {
   font-size: 1.3rem;
 }
 
-.counter-number {
-  /* font-family: 'Enchanted Land', sans-serif; */
-  font-size: 45px;
-  background: linear-gradient(
-    126deg,
-    rgba(187, 160, 123, 1) 0%,
-    rgba(230, 212, 173, 1) 32%,
-    rgba(204, 176, 137, 1) 68%,
-    rgba(230, 212, 173, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .gold-button:hover {
   background-color: #cd853f;
 }
 
-.gradient2 {
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 120px;
-  width: 120px;
-  position: absolute;
-  right: -50px;
-  bottom: 0;
-  border-radius: 50%;
-  box-shadow: 2px 2px 15px #eef2f3;
-  overflow: hidden;
-}
-
-.wrapper {
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+/* .wrapper {
   box-shadow: 0px 4px 10px rgba(11, 48, 60, 0.6);
   border-radius: 8px;
-}
+} */
 
 .top {
   height: 150px;
@@ -296,17 +230,9 @@ body {
   box-shadow: 0px 4px 4px rgba(15, 23, 42, 0.3);
 }
 
-.counter {
-  background: linear-gradient();
-}
-
 .disable-scroll {
   overflow: hidden;
 }
-
-/* .top-project{
-  box-shadow: 0px 4px 4px rgba(15, 23, 42, 0.3);
-} */
 
 @tailwind base;
 @tailwind components;

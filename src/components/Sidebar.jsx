@@ -170,7 +170,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50'
+        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50 font-bold text-xl'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -198,7 +198,7 @@ const Sidebar = () => {
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className={`transition-all h-full duration-150 relative ${
+          className={`transition-all h-full duration-150 relative font-bold ${
             !isSidebarOpen
               ? 'w-0 md:w-[60px] pt-5 md:pt-10 overflow-hidden'
               : 'w-[230px] pt-5 md:pt-10'
@@ -206,7 +206,7 @@ const Sidebar = () => {
       `}
         >
           <div
-            className='mb-10 gap-5 hidden md:flex items-center pl-5'
+            className='mb-10 gap-5 hidden md:flex items-center pl-5 font-bold text-xl'
             onClick={(event) => handleSidebar(event)}
           >
             <button className='h-10 relative' type='button'>
