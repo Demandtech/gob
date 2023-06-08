@@ -7,7 +7,7 @@ const projects = [
     text: 'Total Liquidity Raised',
   },
   {
-    count: 15323,
+    count: '15,323',
     text: 'Total Projects',
   },
   {
@@ -46,7 +46,7 @@ export const Counter = () => {
             className='text-center p-3 flex-1 counter-card'
           >
             <h2 className='counter-number font-bold'>{pro.count}</h2>
-            <p className='uppercase font-semibold text-[#8b4513] text-sm'>
+            <p className='uppercase font-semibold text-[#ccb089] text-sm'>
               {pro.text}
             </p>
           </div>
