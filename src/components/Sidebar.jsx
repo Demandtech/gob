@@ -198,7 +198,7 @@ const Sidebar = () => {
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className={`transition-all h-full duration-150 relative font-bold ${
+          className={`transition-all h-full duration-150 relative ${
             !isSidebarOpen
               ? 'w-0 md:w-[60px] pt-5 md:pt-10 overflow-hidden'
               : 'w-[230px] pt-5 md:pt-10'
