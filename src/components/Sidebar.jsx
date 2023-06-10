@@ -170,7 +170,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50 font-bold text-xl'
+        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50 text-xl hamburger'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -206,7 +206,7 @@ const Sidebar = () => {
       `}
         >
           <div
-            className='mb-10 gap-5 hidden md:flex items-center pl-5 font-bold text-xl'
+            className='mb-10 gap-5 hidden md:flex items-center pl-5 hamburger text-xl'
             onClick={(event) => handleSidebar(event)}
           >
             <button className='h-10 relative' type='button'>
