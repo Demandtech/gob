@@ -4,7 +4,7 @@ import Select from './Select'
 
 const PresaleThree = ({ onclick }) => {
   return (
-    <div className='bg-white px-10 mt-10 py-10 md:px-20  wrapper'>
+    <div className='bg-biege px-10 mt-10 py-10 md:px-20  wrapper'>
       <div>
         <div className='mb-2'>
           <Input

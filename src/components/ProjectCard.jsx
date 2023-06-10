@@ -2,7 +2,6 @@ import React from 'react'
 import projectImg from '../assets/project-bg.png'
 import { Link } from 'react-router-dom'
 
-
 const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
   return (
     <div className='bg-title rounded-md overflow-hidden'>
@@ -16,8 +15,8 @@ const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
           alt=''
         />
       </div>
-      <div className='px-3 py-5' >
-        <h3 className='font-bold pb-1'>{title}</h3>
+      <div className='px-3 py-5'>
+        <h3 className='font-bold pb-1 text-xl'>{title}</h3>
         <p>{desc}</p>
         <a href={'#'} className='mt-y text-primary-btn'>
           {social}
@@ -30,7 +29,11 @@ const ProjectCard = ({ days, title, desc, social, coin, refund, img }) => {
         <p>{refund}</p>
         <p>{days}</p>
         <div className='text-center my-5'>
-          <Link to='/single' className='project-btn bg-black text-white px-4 rounded-md py-2' href='#'>
+          <Link
+            to='/single'
+            className='project-btn bg-black text-white px-4 rounded-md py-2'
+            href='#'
+          >
             View Presale
           </Link>
         </div>

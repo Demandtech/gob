@@ -13,6 +13,7 @@ export default {
         title: '#ccb089',
         goldbg: 'rgba(218, 165, 32, 0.5)',
         // title: '#2c2925',
+        biege: '#F5F5DC',
       },
     },
   },

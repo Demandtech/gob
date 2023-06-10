@@ -340,7 +340,7 @@ const Sidebar = () => {
               <div>
                 <FaChartLine size={20} />
               </div>
-              <Link className='whitespace-nowrap'>Base Chart</Link>
+              <Link className='whitespace-nowrap'>First Chart</Link>
             </li>
           </ul>
           {isSidebarOpen && (
