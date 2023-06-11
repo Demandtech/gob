@@ -21,15 +21,15 @@ const UserWhiteList = () => {
   return (
     <div className='text-white pt-10'>
       <h2 className='text-3xl font-bold'>User WhiteList</h2>
-      <div className='mt-4 rounded-md bg-[#ccb089] flex items-center px-5 py-3 gap-4'>
+      <div className='mt-4 rounded-md bg-[#ccb089] flex items-center flex-col md:flex-row px-5 py-3 gap-4'>
         <h3 className='text-2xl w-full text-black'>Add address to whitelist</h3>
-        <div className='flex items-center gap-4 w-full'>
+        <div className='flex flex-col md:flex-row items-center gap-4 w-full'>
           <input
             type='text'
             className='rounded-md pl-2 w-full'
             placeholder='Address'
           />
-          <button className=' hover:-translate-y-0.5 bg-[#100702] text-white px-10 rounded-md  gtransition-all delay-150  text-center'>
+          <button className='w-full md:w-auto hover:-translate-y-0.5 bg-[#100702] text-white px-10 rounded-md  gtransition-all delay-150  text-center'>
             Add
           </button>
         </div>
