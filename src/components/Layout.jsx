@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
       <div id='video-background'>
-        <video autoPlay loop muted className='h-screen'>
+        <video autoPlay loop muted className='h-full object-cover'>
           <source src={mp4File} type='video/mp4' />
         </video>
       </div>
