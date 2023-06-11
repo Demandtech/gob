@@ -65,7 +65,7 @@ export const lineList = [
 const CenterProjectName = () => {
   return (
     <div>
-      <div className='flex flex-col md:flex-row md:gap-5 top-project'>
+      <div className='flex flex-col md:flex-row md:gap-5 top-project bg-[#100702]'>
         <div className='md:w-3/5 border-2 border-[#efd2ad] rounded-md px-4 mt-4 py-8 goldcardshadow'>
           {lineList.map((line, index) => {
             return (
@@ -90,7 +90,7 @@ const CenterProjectName = () => {
 export const Line = ({ tag, text, className, info, wallet }) => {
   return (
     <div
-      className={`flex   justify-between border-b border-[#ccb089] py-2 ${className} `}
+      className={`flex   justify-between border-b border-[#ccb089] py-2 ${className}`}
     >
       <div>
         <p>{tag}</p>
@@ -112,7 +112,7 @@ export const Line = ({ tag, text, className, info, wallet }) => {
 
 const LeftTopBox = () => {
   return (
-    <div className='text-white space-y-5 border-2 border-[#efd2ad] px-4 py-10 rounded-md mb-3 goldcardshadow'>
+    <div className='text-white space-y-5 border-2 border-[#efd2ad] px-4 py-10 rounded-md mb-3 goldcardshadow bg-[#100702]'>
       <h2 className='text-3xl font-bold '>Contribute to Presale</h2>
       <p>Max buy: 123 ETH</p>
       <div>
@@ -135,7 +135,7 @@ const LeftTopBox = () => {
 
 const OwnerSetting = () => {
   return (
-    <div className='text-white pt-10 rounded-md border-2 border-[#efd2ad] px-4 py-5 goldcardshadow'>
+    <div className='text-white pt-10 rounded-md border-2 border-[#efd2ad] px-4 py-5 goldcardshadow '>
       <h2 className='text-3xl font-bold text-center'>Owner settings</h2>
 
       <div className='flex  gap-10 justify-center py-5'>
@@ -160,7 +160,7 @@ const Status = () => {
   return (
     <div className='flex flex-col md:flex-row md:justify-end  mt-4 gap-5 rounded-md '>
       <div className='md:w-3/5'></div>
-      <div className='border-2 border-[#efd2ad] md:w-2/5 w-full px-4 py-5 rounded-md goldcardshadow'>
+      <div className='border-2 border-[#efd2ad] md:w-2/5 w-full px-4 py-5 rounded-md goldcardshadow bg-[#100702]'>
         <Line className={'text-white'} tag={'Status'} text={'In Progress'} />
         <Line
           className={'text-white'}

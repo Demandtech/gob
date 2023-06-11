@@ -89,6 +89,27 @@ const projects = [
   },
 ]
 
+const seletsdata = [
+  {
+    option: option.filterBy,
+    className: 'text-dark',
+    label: 'Filter by:',
+    placeholder: 'No filter',
+  },
+  {
+    option: option.sortBy,
+    className: 'text-dark',
+    label: 'Sort by:',
+    placeholder: 'No filter',
+  },
+  {
+    option: option.chain,
+    className: 'text-dark',
+    label: 'Chain:',
+    placeholder: 'No filter',
+  },
+]
+
 const Explore = () => {
   return (
     <Layout>
@@ -96,24 +117,15 @@ const Explore = () => {
       <div>
         <Input placeholder={'Search'} type={'text'} />
         <div className='flex w-full md:w-2/3 gap-5 flex-col md:flex-row pt-2 pb-10'>
-          <Select
-            option={option.filterBy}
-            className={'text-black'}
-            label={'Filter by:'}
-            placeholder={'No filter'}
-          />
-          <Select
-            option={option.sortBy}
-            placeholder={'No filter'}
-            label={'Sort by'}
-            className={'text-black'}
-          />
-          <Select
-            option={option.chain}
-            label={'Chain'}
-            placeholder={'No filter'}
-            className={'text-black'}
-          />
+          {seletsdata.map((data, index) => (
+            <Select
+              key={index}
+              option={data.option}
+              className={data.className}
+              label={data.label}
+              placeholder={data.placeholder}
+            />
+          ))}
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5'>
           {projects.map((pro, index) => {

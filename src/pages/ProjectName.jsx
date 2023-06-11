@@ -53,16 +53,18 @@ const WhiteList = () => {
         <h4 className='font-bold'>No.</h4>
         <h4 className='font-bold'>Address</h4>
       </div>
-      {address.map((add, ind) => {
-        return (
-          <Line
-            key={ind}
-            tag={ind + 1}
-            className={'border-black flex-row text-black'}
-            text={add}
-          />
-        )
-      })}
+      <div className='bg-[#ccb089]'>
+        {address.map((add, ind) => {
+          return (
+            <Line
+              key={ind}
+              tag={ind + 1}
+              className={'border-black flex-row text-black'}
+              text={add}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }

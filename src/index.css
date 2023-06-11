@@ -36,8 +36,24 @@ body {
   position: relative;
   box-sizing: border-box;
   overflow-x: hidden;
-  background: #100702;
+  /* background: #100702; */
+  /* background-image: url('assets/bg-img.png'); */
   font-family: tildaNormal, tildaMedium, tildaNormal, sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background: #100702; 
 }
 
 .title {
@@ -49,6 +65,7 @@ body {
     rgba(204, 176, 137, 1) 68%,
     rgba(230, 212, 173, 1) 100%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -94,6 +111,7 @@ body {
     rgba(204, 176, 137, 1) 68%,
     rgba(230, 212, 173, 1) 100%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -234,6 +252,8 @@ body {
 .disable-scroll {
   overflow: hidden;
 }
+
+
 
 @tailwind base;
 @tailwind components;

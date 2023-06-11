@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 
 const Select = ({ placeholder, option, label, className, blackLabel }) => {
-  const [isOpenSelect, setIsOpenSelect] = useState()
-  const [value, setValue] = useState()
+  const [isOpenSelect, setIsOpenSelect] = useState(false)
+
+  const [value, setValue] = useState('')
   const containerRef = useRef(null)
   const listcontainerRef = useRef(null)
 
@@ -14,7 +15,30 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
     } else {
       containerRef.current.style.height = `0px`
     }
+
+    const handleOutsideClick = (event) => {
+      if (
+        isOpenSelect &&
+        !event.target.closest('.select') &&
+        !event.target.closest('.input')
+      ) {
+        setIsOpenSelect(false)
+      }
+    }
+
+    window.addEventListener('click', handleOutsideClick)
+
+    return () => {
+      window.removeEventListener('click', handleOutsideClick)
+    }
   }, [isOpenSelect])
+
+  
+
+  const handleOptionClick = (option) => {
+    setValue(option)
+    setIsOpenSelect(false)
+  }
 
   return (
     <div className={`w-full pr-2 relative input-control ${className}`}>
@@ -25,12 +49,12 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
           {label}
         </label>
       )}
-      <div className='relative ' onClick={() => setIsOpenSelect(!isOpenSelect)}>
+      <div className='relative ' onClick={() => setIsOpenSelect(toggleSelect)}>
         <input
           placeholder={placeholder}
           value={value}
           type='text'
-          className='rounded-md border border-gray700 p-2 w-full focus:outline-none placeholder:'
+          className='input rounded-md border border-gray700 p-2 w-full focus:outline-none placeholder:'
           readOnly
         />
         <div className='text-gray-300 absolute -translate-y-1/2 top-1/2 right-4'>
@@ -49,10 +73,9 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
                   key={index}
                   className={`py-2 hover:bg-[#fdf7f1] cursor-pointer text-black ${
                     isOpenSelect ? 'p-5' : 'opacity-0'
-                  }  ${option[index] == value ? 'bg-orange-100' : ''}`}
+                  }  ${option[index] == index ? 'bg-orange-100' : ''}`}
                   onClick={() => {
-                    setValue(option[index])
-                    setIsOpenSelect(false)
+                    handleOptionClick(option[index])
                   }}
                 >
                   {opt}

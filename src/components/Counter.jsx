@@ -26,7 +26,7 @@ export const Counter = () => {
     Aos.init({ duration: 300 })
   })
   return (
-    <div className='flex justify-between  py-5 mt-5 rounded-xl flex-col md:flex-row shadow-md gap-5 counterEl'>
+    <div className='flex justify-between  py-5 mt-5 rounded-xl flex-col md:flex-row gap-5 counterEl'>
       {projects.map((pro, index) => {
         let animation = ''
         if (index == 0) {

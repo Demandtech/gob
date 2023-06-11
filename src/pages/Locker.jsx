@@ -7,7 +7,7 @@ const Locker = () => {
   return (
     <Layout>
       <Header page='Locker' title={'Create your lock'} />
-      <div className='bg-biege p-10 rounded-md'>
+      <div className='gold-bg p-10 rounded-md'>
         <Input
           type='text'
           placeholder='Enter Token or LP Address'
