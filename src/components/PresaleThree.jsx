@@ -2,7 +2,7 @@ import Button from './Button'
 import Input from './Input'
 import Select from './Select'
 
-const PresaleThree = ({ onclick }) => {
+const PresaleThree = ({ onclick, onchange }) => {
   return (
     <div className='gold-bg px-10 mt-10 py-10 md:px-20  wrapper'>
       <div>
@@ -10,17 +10,32 @@ const PresaleThree = ({ onclick }) => {
           <Input
             label={'Enter amount of tokens available for presale'}
             placeholder={0}
+            onchange={onchange}
+            name={'amount'}
           />
         </div>
         <Input
           label='Presale rate'
           placeholder={0}
           info='1 ETH : X Tokens ratio'
+          onchange={onchange}
         />
         <p>Whitelist</p>
-        <div className='flex gap-2 pl-1 my-2'>
-          <Input type='radio' label='Enable' />
-          <Input type='radio' label='Disable' />
+        <div className='flex items-center gap-2 pl-1 my-2'>
+          <Input
+            type='radio'
+            label='Enable'
+            value={'enable'}
+            onchange={onchange}
+            name={'enable'}
+          />
+          <Input
+            type='radio'
+            label='Disable'
+            value={'disable'}
+            onchange={onchange}
+            name={'enable'}
+          />
         </div>
         <p className='text-primary-btn mt-2'>
           You can enable and disable this whenever you want
@@ -32,39 +47,57 @@ const PresaleThree = ({ onclick }) => {
                 info={'Softcap must be >= 25% of Hardcap'}
                 placeholder={0}
                 label={'Softcap (ETH)'}
+                onchange={onchange}
               />
             </div>
 
             <div className='flex-1 mb-2'>
-              <Input placeholder={0} label={'Hardcap (ETH)'} />
+              <Input
+                placeholder={0}
+                label={'Hardcap (ETH)'}
+                onchange={onchange}
+              />
             </div>
           </div>
           <div className='flex flex-col md:flex-row'>
             <div className='flex-1 mb-2'>
-              <Input placeholder={0} label={'Minimum buy (ETH)'} />
+              <Input
+                placeholder={0}
+                label={'Minimum buy (ETH)'}
+                onchange={onchange}
+              />
             </div>
             <div className='flex-1 mb-2'>
-              <Input placeholder={0} label={'Maximum buy (ETH)'} />
+              <Input
+                placeholder={0}
+                label={'Maximum buy (ETH)'}
+                onchange={onchange}
+              />
             </div>
           </div>
           <div className='flex flex-col md:flex-row'>
             <div className='flex-1 pb-3'>
-              <Select label={'Refund type'} blackLabel/>
+              <Select label={'Refund type'} blackLabel />
             </div>
             <div className='flex-1 pb-3'>
-              <Select label={'Presalerate'} blackLabel/>
+              <Select label={'Presalerate'} blackLabel />
             </div>
           </div>
 
           <div className='flex flex-col md:flex-row'>
             <div className='flex-1 mb-2'>
-              <Input placeholder={0} label={'Liquidity (%)'} />
+              <Input
+                placeholder={0}
+                label={'Liquidity (%)'}
+                onchange={onchange}
+              />
             </div>
             <div className='flex-1 mb-2'>
               <Input
                 info={'1 ETH = 0 QR68'}
                 placeholder={0}
                 label={'Listing rate'}
+                onchange={onchange}
               />
             </div>
           </div>

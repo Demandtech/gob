@@ -15,7 +15,7 @@ const Home = () => {
   })
   return (
     <Layout>
-      <div>
+      <div className='mb-10'>
         <Header page='Home' title='First Launchpad' />
         <div
           className='rounded-xl home-img overflow-hidden md:h-[500px] goldcardshadow'

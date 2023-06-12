@@ -23,7 +23,7 @@ const projects = [
 export const Counter = () => {
   
   useEffect(() => {
-    Aos.init({ duration: 300 })
+    Aos.init({ duration: 150 })
   })
   return (
     <div className='flex justify-between  py-5 mt-5 rounded-xl flex-col md:flex-row gap-5 counterEl'>

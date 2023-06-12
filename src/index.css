@@ -184,6 +184,7 @@ body {
 }
 
 .aside {
+  box-shadow: 2px 0px 0px 0px rgba(239, 210, 173, 0.5);
   background: linear-gradient(
     126deg,
     rgba(187, 160, 123, 1) 0%,
@@ -191,26 +192,11 @@ body {
     rgba(204, 176, 137, 1) 68%,
     rgba(230, 212, 173, 1) 100%
   );
-}
-
-.typing-effect {
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: 'Enchanted Land', sans-serif;
-  background: linear-gradient(
-    126deg,
-    rgba(187, 160, 123, 1) 0%,
-    rgba(230, 212, 173, 1) 32%,
-    rgba(204, 176, 137, 1) 68%,
-    rgba(230, 212, 173, 1) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .top-aside,
 .primary-btn {
+  box-shadow: 0px 2px 0px 0px rgba(239, 210, 173, 0.5);
   background: linear-gradient(
     126deg,
     rgba(187, 160, 123, 1) 0%,
@@ -293,6 +279,55 @@ body {
   font-family: tildaBold, sans-serif;
 }
 
+
+
+input[type='radio'] {
+  --webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  margin: 0;
+
+  cursor: pointer;
+  font: inherit;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 0.15rem solid rgba(187, 160, 123, 1);;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.form-control  {
+  margin-top: 1rem;
+}
+
+input[type='radio']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em rgba(187, 160, 123, 1);
+
+  /* background-color: CanvasText; */
+  background-color: rgba(187, 160, 123, 1);;
+}
+
+input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+input[type='radio']:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+.form-control:focus-within {
+  color: rgba(187, 160, 123, 1);
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
@@ -344,6 +379,18 @@ body {
 
 .disable-scroll {
   overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 600px) {
+  .layout {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+  }
 }
 
 @tailwind base;

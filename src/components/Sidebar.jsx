@@ -67,8 +67,8 @@ const navigation = [
   },
 ]
 
-const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuOpenTwo, setIsMenuOpenTwo] = useState(false)
   const menuRef = useRef(null)
@@ -78,9 +78,9 @@ const Sidebar = () => {
   const menuRefTwo = useRef(null)
   const innerMenuRefTwo = useRef(null)
 
-  function handleSidebar(event) {
-    setIsSidebarOpen((prev) => !prev)
-  }
+  // function handleSidebar(event) {
+  //   setIsSidebarOpen((prev) => !prev)
+  // }
 
   function handleMenuOpen(index) {
     if (isSidebarOpen) {
@@ -137,7 +137,6 @@ const Sidebar = () => {
     }
 
     window.addEventListener('click', handleOutsideClick)
-    
 
     return () => {
       window.removeEventListener('click', handleOutsideClick)
@@ -160,7 +159,6 @@ const Sidebar = () => {
     setDisableScroll(false)
   }
 
-
   if (disableScroll) {
     document.body.classList.add('disable-scroll')
   } else {
@@ -170,7 +168,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5 fixed z-50 text-xl hamburger'
+        className='top-aside text-[#100702] flex items-center right-0 left-0 top-0 gap-5 md:hidden py-5  z-50 text-xl hamburger fixed'
         onClick={(event) => handleSidebar(event)}
       >
         <button
@@ -191,14 +189,16 @@ const Sidebar = () => {
         <p className='flex-1'>First Launchpad</p>
       </div>
       <aside
-        className={`aside text-primary min-h-screen bottom-0 top-[67px] border-t-2 border-[#ccab72] md:top-0 transition-all duration-300 z-50 fixed md:fixed `}
+        className={`aside text-primary min-h-screen   transition-all duration-300 z-50 fixed  top-[68px] border-[#bba07b] border-t-2 md:border-t-0 flex flex-col md:top-0 ${
+          !isSidebarOpen ? 'w-0 md:w-[60px] overflow-hidden' : 'w-[230px] '
+        } `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className={`transition-all h-full duration-150 relative ${
+          className={`transition-all h-full duration-300 sticky ${
             !isSidebarOpen
               ? 'w-0 md:w-[60px] pt-5 md:pt-10 overflow-hidden'
               : 'w-[230px] pt-5 md:pt-10'
@@ -233,7 +233,9 @@ const Sidebar = () => {
               <div>
                 <FcHome size={20} />
               </div>
-              <Link to={'/'}>Home</Link>
+              <Link onClick={() => setIsSidebarOpen(false)} to={'/'}>
+                Home
+              </Link>
             </li>
             <li
               className={` gap-2  mb-5 px-5 py-1 hover:text-[#8B4513] transition-all duration-150 ${
@@ -270,11 +272,18 @@ const Sidebar = () => {
                   }`}
                 >
                   <li>
-                    <Link to={'/presale'}>Create Launchpad</Link>
+                    <Link
+                      onClick={() => setIsSidebarOpen(false)}
+                      to={'/presale'}
+                    >
+                      Create Launchpad
+                    </Link>
                   </li>
 
                   <li>
-                    <Link to='/project'>Launchpad List</Link>
+                    <Link onClick={() => setIsSidebarOpen(false)} to='/project'>
+                      Launchpad List
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -308,11 +317,15 @@ const Sidebar = () => {
               >
                 <ul ref={innerMenuRefTwo} className={`pl-10 pt-1 `}>
                   <li>
-                    <Link to='/locker'>Create Lock</Link>
+                    <Link onClick={() => setIsSidebarOpen(false)} to='/locker'>
+                      Create Lock
+                    </Link>
                   </li>
 
                   <li>
-                    <Link to='/explore'>Lock List</Link>
+                    <Link onClick={() => setIsSidebarOpen(false)} to='/explore'>
+                      Lock List
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -343,14 +356,18 @@ const Sidebar = () => {
               <Link className='whitespace-nowrap'>First Chart</Link>
             </li>
           </ul>
-          {isSidebarOpen && (
-            <div className='absolute bottom-20 md:bottom-5 px-5 text-gray-400 whitespace-nowrap text-sm text-center'>
-              <p>
-                $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
-              </p>
-            </div>
-          )}
         </div>
+        {isSidebarOpen && (
+          <div className='mt-auto md:bottom-5 px-5 text-gray-400 whitespace-nowrap text-sm text-center pb-20 md:pb-5'>
+            <p
+              className={`transition-opacity duration-300 ${
+                isSidebarOpen ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              $Sirius <span>Copyright &copy;</span> {new Date().getFullYear()}
+            </p>
+          </div>
+        )}
       </aside>
     </>
   )

@@ -12,8 +12,8 @@ const Input = ({
   const [selectedCurrency, setSelectedCurrency] = useState()
   if (type === 'radio') {
     return (
-      <div>
-        <div className='flex w-full items-center gap-2 relative focus:-translate-y-1'>
+      <div className='form-control'>
+        <div className=' flex w-full items-center gap-2 relative focus:-translate-y-1'>
           <input
             placeholder={placeholder}
             className={`border border-gray700 p-2 scale-150`}
