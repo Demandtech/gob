@@ -50,7 +50,7 @@ const Input = ({
           <input
             placeholder={placeholder}
             className={`${
-              type !== 'checkbox' ? 'w-full' : 'scale-150'
+              type !== 'checkbox' ? 'w-full' : ''
             }  border border-gray700 p-2`}
             type={type}
             name={name}
