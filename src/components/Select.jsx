@@ -62,12 +62,13 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
         />
         <div className='text-gray-300 absolute -translate-y-1/2 top-1/2 right-4'>
           {isOpenSelect ? <FaChevronDown className={''} /> : <FaChevronUp />}
+          <div className="absolute top-0 left-0 bottom-0 right-0"></div>
         </div>
       </button>
       <div>
         <div
           ref={containerRef}
-          className={`select bg-white mt-2 rounded-md overflow-hidden transition-all duration-150 absolute z-10 right-0 left-0 mr-2 `}
+          className={`select bg-white mt-2 rounded-md overflow-hidden transition-all duration-300 absolute z-10 right-0 left-0 mr-2 `}
         >
           <ul ref={listcontainerRef} className={`overflow-stroll `}>
             {option?.map((opt, index) => {
@@ -76,7 +77,7 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
                   key={index}
                   className={`py-2 hover:bg-[#fdf7f1] cursor-pointer text-black ${
                     isOpenSelect ? 'p-5' : 'opacity-0'
-                  }  ${option[index] == index ? 'bg-orange-100' : ''}`}
+                  }  ${option[index] == value ? 'bg-orange-100' : ''}`}
                   onClick={() => {
                     handleOptionClick(option[index])
                   }}
