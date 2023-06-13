@@ -3,8 +3,8 @@ import { FaWallet, FaCoins } from 'react-icons/fa'
 const Header = ({ title, page }) => {
   return (
     <header className=' py-10 w-full'>
-      <div className='flex flex-col md:flex-row items-center text-primary justify-between gap-5'>
-        <div className='header-title text-xl md:text-2xl'>
+      <div className='flex flex-col lg:flex-row items-center text-primary justify-between gap-5'>
+        <div className='header-title md:text-xl lg:text-2xl'>
           <span>First Launchpad</span> / <strong className='page'>{page}</strong>
         </div>
         <div className='flex items-center gap-4'>

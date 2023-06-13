@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className='layout min-h-screen relative'>
-      <div className='container lg:mx-auto  pb-20 mt-14 md:mt-0 overflow-y-hidden'>
+      <div className='container lg:mx-auto  pb-20 overflow-y-hidden'>
         <Sidebar
           setIsSidebarOpen={setIsSidebarOpen}
           isSidebarOpen={isSidebarOpen}
@@ -18,11 +18,11 @@ const Layout = ({ children }) => {
         />
       </div>
       <div
-        className={` transition-all duration-300 pt-20 md:pt-0  ${
+        className={` transition-all duration-300 ${
           isSidebarOpen ? 'md:ml-[230px]' : 'md:ml-[60px]'
         }`}
       >
-        <div className='page-content mx-auto w-11/12 md:w-10/12   px-5 md:px-20  pb-10 '>
+        <div className='page-content mx-auto w-11/12 lg:w-10/12   px-5 md:px-10 lg:px-20  pb-10 '>
           {children}
         </div>
       </div>

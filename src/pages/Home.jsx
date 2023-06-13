@@ -21,7 +21,7 @@ const Home = () => {
           className='rounded-xl home-img overflow-hidden md:h-[500px] goldcardshadow'
           data-aos='zoom-in'
         >
-          <div className='w-full h-full relative'>
+          <div className='w-full h-full'>
             <img
               src={img}
               alt='logo'
