@@ -137,7 +137,7 @@ body {
     -5vw -11vh 1px 1px #ccb089, 33vw -8vh 1px 0px #ccb089,
     -16vw 17vh 0px 0px #ccb089, 18vw 27vh 0px 1px #ccb089,
     -8vw -10vh 1px 1px #ccb089;
-  animation: zoom 20s alternate-reverse infinite;
+  animation: zoom 16s alternate-reverse infinite;
 }
 
 @keyframes zoom {
@@ -432,7 +432,7 @@ input[type='checkbox']:focus {
 .layout {
   display: grid;
   grid-template-columns: 1fr;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 @media screen and (min-width: 600px) {

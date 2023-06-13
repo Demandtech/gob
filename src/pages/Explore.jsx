@@ -117,15 +117,17 @@ const Explore = () => {
       <div>
         <Input placeholder={'Search'} type={'text'} />
         <div className='flex w-full md:w-2/3 gap-5 flex-col md:flex-row pt-2 pb-10'>
-          {seletsdata.map((data, index) => (
-            <Select
-              key={index}
-              option={data.option}
-              className={data.className}
-              label={data.label}
-              placeholder={data.placeholder}
-            />
-          ))}
+          {seletsdata.map((data, index) => {
+            return (
+              <Select
+                key={index}
+                option={data.option}
+                className={data.className}
+                label={data.label}
+                placeholder={data.placeholder}
+              />
+            )
+          })}
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5'>
           {projects.map((pro, index) => {

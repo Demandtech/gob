@@ -20,8 +20,9 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
       if (
         isOpenSelect &&
         !event.target.closest('.select') &&
-        !event.target.closest('.input')
+        !event.target.closest('.select-control')
       ) {
+        console.log(event.target)
         setIsOpenSelect(false)
       }
     }
@@ -33,11 +34,13 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
     }
   }, [isOpenSelect])
 
-  
-
   const handleOptionClick = (option) => {
     setValue(option)
-    setIsOpenSelect(false)
+    toggleSelect()
+  }
+
+  const toggleSelect = () => {
+    setIsOpenSelect(!isOpenSelect)
   }
 
   return (
@@ -49,18 +52,18 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
           {label}
         </label>
       )}
-      <div className='relative ' onClick={() => setIsOpenSelect(toggleSelect)}>
+      <button className='relative w-full select-control' onClick={toggleSelect}>
         <input
           placeholder={placeholder}
           value={value}
           type='text'
-          className='input rounded-md border border-gray700 p-2 w-full focus:outline-none placeholder:'
+          className='cursor-pointer input rounded-md border border-gray700 p-2 w-full focus:outline-none placeholder:'
           readOnly
         />
         <div className='text-gray-300 absolute -translate-y-1/2 top-1/2 right-4'>
           {isOpenSelect ? <FaChevronDown className={''} /> : <FaChevronUp />}
         </div>
-      </div>
+      </button>
       <div>
         <div
           ref={containerRef}

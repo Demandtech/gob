@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
           isSidebarOpen ? 'md:ml-[230px]' : 'md:ml-[60px]'
         }`}
       >
-        <div className='page-content mx-auto w-11/12 md:w-10/12   px-5 md:px-20 '>
+        <div className='page-content mx-auto w-11/12 md:w-10/12   px-5 md:px-20  pb-10 '>
           {children}
         </div>
       </div>

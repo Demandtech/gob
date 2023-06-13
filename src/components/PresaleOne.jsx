@@ -5,7 +5,7 @@ import { useState } from 'react'
 const PresaleOne = ({ onclick, onchange }) => {
   
   return (
-    <div className='gold-bg px-10  mt-10 py-10 md:px-28  wrapper'>
+    <div className='gold-bg px-10  mt-10 py-10 rounded-md md:px-28  wrapper'>
       <Input
         type='text'
         placeholder='Ex: 0x123456789ABCDEF'
