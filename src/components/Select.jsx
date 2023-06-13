@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
+import {FaChevronDown, FaChevronRight } from 'react-icons/fa'
 
 const Select = ({ placeholder, option, label, className, blackLabel }) => {
   const [isOpenSelect, setIsOpenSelect] = useState(false)
@@ -61,7 +61,7 @@ const Select = ({ placeholder, option, label, className, blackLabel }) => {
           readOnly
         />
         <div className='text-gray-300 absolute -translate-y-1/2 top-1/2 right-4'>
-          {isOpenSelect ? <FaChevronDown className={''} /> : <FaChevronUp />}
+          {isOpenSelect ? <FaChevronDown className={''} /> : <FaChevronRight />}
           <div className="absolute top-0 left-0 bottom-0 right-0"></div>
         </div>
       </button>
