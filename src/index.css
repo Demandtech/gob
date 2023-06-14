@@ -161,6 +161,8 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px rgba(239, 210, 173, 0.5);
+ 
 }
 
 .home-img {
