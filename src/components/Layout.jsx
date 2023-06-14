@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
         />
       </div>
       <div
-        className={` transition-all duration-300 ${
-          isSidebarOpen ? 'md:ml-[230px]' : 'md:ml-[60px]'
+        className={` transition-all duration-300 md:ml-[60px] ${
+          isSidebarOpen ? 'lg:ml-[230px]' : ''
         }`}
       >
         <div className='page-content mx-auto w-11/12 lg:w-10/12   px-5 md:px-10 lg:px-20  pb-10 '>

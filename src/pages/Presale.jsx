@@ -28,7 +28,6 @@ const Presale = () => {
     <Presale2 onclick={handlePage} />,
     <Presale3 onclick={handlePage} />,
     <Presale4 onclick={handlePage} />,
-    <Presale4 onclick={handlePage} />,
   ]
   return (
     <Layout>

@@ -1,4 +1,3 @@
-
 const data = [
   {
     text: 'Verify Token',
@@ -18,20 +17,20 @@ const data = [
   },
 ]
 
-const TabsNavigate = ({elIndex}) => {
+const TabsNavigate = ({ elIndex }) => {
   return (
-    <div className='flex justify-between flex-col items-center  md:flex-row relative gap-3 text-primary'>
+    <div className='flex  justify-between flex-col items-center  lg:flex-row relative gap-3 text-primary'>
       {data.map((d, index) => {
         return (
           <div
             key={index}
-            className={'flex z-10 items-center gap-3 bg-[#100702] px-3'}
+            className={'flex z-10  items-center gap-3 bg-[#100702] px-3'}
           >
             <div
-              className={`w-8 h-8 grid place-content-center border-2 rounded-full border-primary leading-6 font-bold ${
+              className={`w-8 h-8 grid place-content-center border-2 rounded-full  leading-6 font-bold ${
                 elIndex === index
-                  ? 'gold-bg border-secondary-btn goldcardshadow'
-                  : ''
+                  ? 'gold-bg  active-tab border-[#ccb089]'
+                  : 'border-primary'
               }`}
             >
               {d.num}
@@ -41,7 +40,7 @@ const TabsNavigate = ({elIndex}) => {
         )
       })}
 
-      <div className='absolute w-0.5 top-0 bottom-0 bg-primary md:left-0 md:right-0 md:w-full md:h-0.5 md:translate-y-1/2 md:top-1/2' />
+      <div className='absolute w-0.5 top-0 bottom-0 bg-primary lg:left-0 lg:right-0 lg:w-full lg:h-0.5 lg:translate-y-1/2 lg:top-1/2 ml-5 lg:ml-0' />
     </div>
   )
 }
