@@ -353,7 +353,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
               <div>
                 <FaChartLine size={20} />
               </div>
-              <Link className='whitespace-nowrap'>First Chart</Link>
+              <Link className='whitespace-nowrap'>$SIRIUS Chart</Link>
             </li>
           </ul>
         </div>
