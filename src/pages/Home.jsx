@@ -18,14 +18,14 @@ const Home = () => {
       <div className='mb-10'>
         <Header page='Home' title='First Launchpad' />
         <div
-          className='rounded-xl home-img overflow-hidden h-[500px] goldcardshadow'
+          className='rounded-xl home-img overflow-hidden  goldcardshadow'
           data-aos='zoom-in'
         >
-          <div className='w-full h-full'>
+          <div className='lg:h-[500px] w-full'>
             <img
               src={img}
               alt='logo'
-              className='object-cover'
+              className='h-fit w-full object-contain'
               loading='lazy'
             />
           </div>
