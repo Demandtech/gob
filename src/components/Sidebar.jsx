@@ -7,7 +7,7 @@ import {
   FaMedium,
   FaChartLine,
   FaChevronDown,
-  FaChevronUp,
+  FaChevronRight,
 } from 'react-icons/fa'
 import navArroIcon from '../assets/svgs/nav-arrow-icon.svg'
 import { Link } from 'react-router-dom'
@@ -238,7 +238,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
               </Link>
             </li>
             <li
-              className={` gap-2  mb-5 px-5 py-1 hover:text-[#8B4513] transition-all duration-150 ${
+              className={` gap-2  mb-5 px-5 py-1 hover:text-[#8B4513] transition-all duration-300 ${
                 isMenuOpen ? 'bg-[#ccab72] drop-down' : 'bg-dark'
               } `}
               onClick={handleMenuOpen}
@@ -254,7 +254,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   {isMenuOpen ? (
                     <FaChevronDown size={10} />
                   ) : (
-                    <FaChevronUp size={10} />
+                    <FaChevronRight size={10} />
                   )}
                   <div className='absolute top-0 h-full w-full'></div>
                 </div>
@@ -267,7 +267,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   ref={innerMenuRef}
                   className={`pl-10 ${
                     isMenuOpen
-                      ? ' py-1 border-black transition-all duration-150 '
+                      ? ' py-1 border-black transition-all duration-300 '
                       : 'bg-dark font-normal'
                   }`}
                 >
@@ -306,14 +306,14 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   {isMenuOpenTwo ? (
                     <FaChevronDown size={10} />
                   ) : (
-                    <FaChevronUp size={10} />
+                    <FaChevronRight size={10} />
                   )}
                   <div className='absolute top-0 h-full w-full'></div>
                 </div>
               </div>
               <div
                 ref={menuRefTwo}
-                className='overflow-hidden transition-all duration-150'
+                className='overflow-hidden transition-all duration-300'
               >
                 <ul ref={innerMenuRefTwo} className={`pl-10 pt-1 `}>
                   <li>

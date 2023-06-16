@@ -77,10 +77,30 @@ const PresaleThree = ({ onclick, onchange }) => {
           </div>
           <div className='flex flex-col md:flex-row'>
             <div className='flex-1 pb-3'>
-              <Select label={'Refund type'} blackLabel />
+              <Select
+                label={'Refund type'}
+                blackLabel
+                option={[
+                  'Select 1',
+                  'Select 2',
+                  'Select 3',
+                  'Select 4',
+                  'Select 5',
+                ]}
+              />
             </div>
             <div className='flex-1 pb-3'>
-              <Select label={'Presalerate'} blackLabel />
+              <Select
+                label={'Presalerate'}
+                blackLabel
+                option={[
+                  'Select 1',
+                  'Select 2',
+                  'Select 3',
+                  'Select 4',
+                  'Select 5',
+                ]}
+              />
             </div>
           </div>
 
