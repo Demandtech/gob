@@ -1,13 +1,12 @@
-import Layout from '../components/Layout'
-import Header from '../components/Header'
 import { Line } from '../components/CenterProjectName'
 import { TfiWorld, TfiTwitter } from 'react-icons/tfi'
 import { CiFacebook } from 'react-icons/ci'
 import { TbBrandTelegram } from 'react-icons/tb'
 import { BsSuitHeartFill, BsSuitHeart, BsCheck } from 'react-icons/bs'
-
 import ethSvg from '../assets/svgs/ethereum.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { launchpads } from '../data'
 
 const project = {
   name: 'DOGFOOD',
@@ -95,84 +94,123 @@ export const lineList = [
 ]
 
 const SingleLaunchpad = () => {
+  const { id } = useParams()
+  const [singleData, setSingleData] = useState(null)
   const [isLike, setIsLike] = useState(false)
+
+  const statusStyle = `${
+    singleData?.status === 'Sale Closed' && 'text-[#e928c2]'
+  } ${singleData?.status === 'Success' && 'text-[#48c774]'} ${
+    singleData?.status === 'Sale Canceled' && 'text-[#a0a0a0]'
+  } ${singleData?.status === 'Upcoming' && 'text-[#d29813]'} ${
+    singleData?.status === 'Sale Ended' && 'text-[#ff3465]'
+  }`
+
+  const statusWrapperStyle = `${
+    singleData?.status === 'Sale Closed' && 'bg-[#e928c2]/[.1]'
+  } ${singleData?.status === 'Success' && 'bg-[#48c774]/[.1]'} ${
+    singleData?.status === 'Sale Canceled' && 'bg-[#a0a0a0]/[.1]'
+  } ${singleData?.status === 'Upcoming' && 'bg-[#d29813]/[.1]'} ${
+    singleData?.status === 'Sale Ended' && 'bg-[#ff3465]/[.1]'
+  }`
+
+  useEffect(() => {
+    if (id) {
+      const singleLaunchpad = launchpads.find(
+        (launchpad) => launchpad.id === id
+      )
+      setSingleData(singleLaunchpad)
+    }
+  }, [])
+  console.log(id)
+  console.log(singleData)
+
   return (
     <div className='bg-[#faf9fa] min-h-screen px-5  pt-20 md:pt-10'>
       <div className='md:mr-[40px] md:ml-[100px] py-5  border-black flex flex-col md:flex-row justify-between gap-4'>
-        <div className='bg-[#ffffff] w-full md-w-3/5 px-5 py-10'>
-          <div className='flex items-start flex-col md:flex-row gap-4 mb-4'>
-            <div className='relative'>
-              <img
-                className='w-[52px] h-[52px] rounded-full object-cover'
-                src={project.img}
-                alt=''
-              />
-              <div className='w-[20px] absolute left-[38px] bottom-[2px]'>
+        {singleData && (
+          <div className='bg-[#ffffff] w-full md-w-3/5 px-5 py-10'>
+            <div className='flex items-start flex-col md:flex-row gap-4 mb-4'>
+              <div className='relative'>
                 <img
-                  className='w-full object-contain'
-                  src={project.icon}
-                  alt='coin-icon'
+                  className='w-[52px] h-[52px] rounded-full object-cover'
+                  src={singleData?.img}
+                  alt=''
                 />
+                <div className='w-[20px] absolute left-[38px] bottom-[2px]'>
+                  <img
+                    className='w-full object-contain'
+                    src={singleData?.icon}
+                    alt='coin-icon'
+                  />
+                </div>
+              </div>
+              <div className='text-xl relative'>
+                <p>{singleData.name}</p>
+                <div className='absolute flex gap-1'>
+                  {singleData.socials.map((social, index) => {
+                    return (
+                      <div key={index} className='text-[#f95e9f]'>
+                        {social}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+              <div className='mt-5 md:mt-0 flex gap-2'>
+                <div>
+                  {project.audit === true && (
+                    <div className='bg-[#00bcd4] text-white px-2 py-1 rounded-md text-sm'>
+                      Audit
+                    </div>
+                  )}
+                </div>
+                <div>
+                  {project.kyc === true && (
+                    <div className='bg-[#49c774] text-white px-2 py-1 rounded-md text-sm'>
+                      KYC
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className='md:ml-auto flex gap-3'>
+                <button
+                  onClick={() => setIsLike(!isLike)}
+                  className='bg-[#11111111] rounded-full px-2 py-2'
+                >
+                  {isLike ? (
+                    <BsSuitHeartFill className='text-[#8B4513]' />
+                  ) : (
+                    <BsSuitHeart className='text-[#8B4513]' />
+                  )}{' '}
+                </button>
+                <div
+                  className={`flex items-center gap-2 px-2 py-1 rounded-2xl ${statusWrapperStyle} `}
+                >
+                  <div className={`dot`}></div>
+                  <span className={`text-sm font-semibold pr-4 ${statusStyle}`}>
+                    {singleData.status}
+                  </span>
+                </div>
               </div>
             </div>
-            <div className='text-xl relative'>
-              <p>{project.name}</p>
-              <div className='absolute flex gap-1'>
-                {project.social.map((so) => {
-                  return <div className='text-[#f95e9f]'>{so}</div>
-                })}
-              </div>
-            </div>
-            <div className='mt-5 md:mt-0 flex gap-2'>
-              <div>
-                {project.audit === true && (
-                  <div className='bg-[#00bcd4] text-white px-2 py-1 rounded-md text-sm'>
-                    Audit
-                  </div>
-                )}
-              </div>
-              <div>
-                {project.kyc === true && (
-                  <div className='bg-[#49c774] text-white px-2 py-1 rounded-md text-sm'>
-                    KYC
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className='md:ml-auto flex gap-3'>
-              <button
-                onClick={() => setIsLike(!isLike)}
-                className='bg-[#11111111] rounded-full px-2 py-2'
-              >
-                {isLike ? (
-                  <BsSuitHeartFill className='text-[#8B4513]' />
-                ) : (
-                  <BsSuitHeart className='text-[#8B4513]' />
-                )}{' '}
-              </button>
-              <div className='flex items-center gap-2 bg-background px-2 py-1 rounded-2xl'>
-                <div className='dot'></div>
-                <span className={'text-sm font-semibold pr-4 text-[#8B4513]'}>
-                  {project.upcoming ? 'Upcoming' : 'Sale Live'}
-                </span>
-              </div>
+            <p className='mb-5'>{project.desc}</p>
+            <div>
+              {lineList.map((line, index) => {
+                return (
+                  <Line
+                    key={index}
+                    className={'text-sm py-2 flex-col md:flex-row'}
+                    tag={line.tag}
+                    text={line.text}
+                    info={line?.info}
+                    wallet={line?.wallet}
+                  />
+                )
+              })}
             </div>
           </div>
-          <p className='mb-5'>{project.desc}</p>
-          <div>
-            {lineList.map((line) => {
-              return (
-                <Line
-                  className={'text-sm py-2 flex-col md:flex-row'}
-                  tag={line.tag}
-                  text={line.text}
-                  info={line?.info}
-                  wallet={line?.wallet}
-                />
-              )
-            })}
-          </div>
-        </div>
+        )}
         <div className='md:w-2/5 w-full flex flex-col justify-between'>
           <div className='bg-white  p-5 rounded-md'>
             <div className='text-center'>
@@ -199,12 +237,12 @@ const SingleLaunchpad = () => {
             </div>
             <div className='rounded-xl overflow-hidden h-4 w-full bg-[#f5f5f5] mt-5'>
               <div
-                style={{ width: `${project.progress}px` }}
+                style={{ width: `${singleData?.progress}px` }}
                 className={`h-full rounded-xl bg-[#49c774]`}
               ></div>
             </div>
             <div className='flex justify-between text-sm'>
-              <span>{project.progress} BNB</span>
+              <span>{singleData?.progress} BNB</span>
               <span>50 BNB</span>
             </div>
             <div className='mt-5'>
@@ -264,7 +302,9 @@ const SingleLaunchpad = () => {
                 type='text'
                 className='w-full border-2 py-1 pl-2 rounded-md mb-2'
               />
-              <button className='bg-[#8B4513] flex items-center px-4 py-1 gap-2 rounded-md text-primary text-sm'>Send </button>
+              <button className='bg-[#8B4513] flex items-center px-4 py-1 gap-2 rounded-md text-primary text-sm'>
+                Send{' '}
+              </button>
             </form>
           </div>
         </div>

@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import Button from './Button'
 import Input from './Input'
 
-const PresaleFour = ({ onclick }) => {
+
+const FinalStep = ({ onclick }) => {
+  const navigate = useNavigate()
   return (
     <div className='gold-bg rounded-md p-10 mt-10  md:px-20  wrapper'>
       <div>
@@ -69,11 +72,15 @@ const PresaleFour = ({ onclick }) => {
         </div>
       </div>
       <div className='flex flex-col md:flex-row items-center gap-5 md:gap-10 justify-center mt-5'>
-        <Button onclick={() => onclick('prev')} secondary label='Go Back' />
+        <Button
+          onclick={() => navigate('/create-launchpad/step-three')}
+          secondary
+          label='Go Back'
+        />
         <Button onclick={() => onclick('next')} label='Approve Payment' />
       </div>
     </div>
   )
 }
 
-export default PresaleFour
+export default FinalStep

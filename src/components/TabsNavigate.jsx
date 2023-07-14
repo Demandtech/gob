@@ -1,23 +1,33 @@
+import { useLocation } from 'react-router-dom'
+
 const data = [
   {
     text: 'Verify Token',
     num: 1,
+    path: '/create-launchpad',
   },
   {
     text: 'Defi Launchpad Info',
     num: 2,
+    path: '/create-launchpad/step-two',
   },
   {
     text: 'Defi Launchpad Info',
     num: 3,
+    path: '/create-launchpad/step-three',
   },
   {
     text: 'Finish',
     num: 4,
+    path: '/create-launchpad/final-step',
   },
 ]
 
-const TabsNavigate = ({ elIndex }) => {
+const TabsNavigate = () => {
+  const location = useLocation()
+  const currentPath = location.pathname
+
+  console.log(currentPath)
   return (
     <div className='flex  justify-between flex-col items-center  lg:flex-row relative gap-3 text-primary'>
       {data.map((d, index) => {
@@ -28,7 +38,7 @@ const TabsNavigate = ({ elIndex }) => {
           >
             <div
               className={`w-8 h-8 grid place-content-center border-2 rounded-full  leading-6 font-bold ${
-                elIndex === index
+                currentPath === d.path
                   ? 'gold-bg  active-tab border-[#ccb089]'
                   : 'border-primary'
               }`}

@@ -274,7 +274,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   <li>
                     <Link
                       onClick={() => setIsSidebarOpen(false)}
-                      to={'/presale'}
+                      to={'/create-launchpad/step-one'}
                     >
                       Create Launchpad
                     </Link>
@@ -283,7 +283,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   <li>
                     <Link
                       onClick={() => setIsSidebarOpen(false)}
-                      to='/launpad_list'
+                      to='/launchpads'
                     >
                       Launchpad List
                     </Link>

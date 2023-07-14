@@ -1,6 +1,11 @@
+import { useState } from 'react'
 import Button from './Button'
+import { useNavigate } from 'react-router-dom'
 
-const presale2 = ({ onclick }) => {
+const StepTwo = () => {
+  const [activeIndex, setActiveIndex] = useState(null)
+  const [auditor, setauditor] = useState(null)
+  const navigate = useNavigate()
   const auditors = [
     'Sample text1',
     'Sample text2',
@@ -17,8 +22,16 @@ const presale2 = ({ onclick }) => {
           {auditors.map((auditor, index) => {
             return (
               <button
-                className='border-2 border-secondary-btn rounded-md px-4 py-2'
+                className={`border-2 border-secondary-btn rounded-md px-4 py-2 ${
+                  index == activeIndex ? 'gold-bg' : ''
+                }`}
                 key={index}
+                onClick={() => {
+                  console.log('clicked')
+                  setActiveIndex(index)
+                  console.log(index == activeIndex)
+                  setauditor(auditor)
+                }}
               >
                 {auditor}
               </button>
@@ -31,11 +44,22 @@ const presale2 = ({ onclick }) => {
         </p>
       </div>
       <div className='flex gap-5 justify-center mt-5 flex-col items-center md:flex-row'>
-        <Button onclick={() => onclick('prev')} secondary label='Go Back' />
-        <Button onclick={() => onclick('next')} label='Approve Payment' />
+        <Button
+          onclick={() => navigate('/create-launchpad')}
+          secondary
+          label='Go Back'
+        />
+        <Button
+          onclick={() => {
+            if (auditor) {
+              navigate('/create-launchpad/step-three')
+            }
+          }}
+          label='Approve Payment'
+        />
       </div>
     </div>
   )
 }
 
-export default presale2
+export default StepTwo

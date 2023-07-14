@@ -17,6 +17,7 @@ const LaunchaPadCard = ({
   audit,
   kyc,
   icon,
+  id
 }) => {
   const [isLike, setIsLike] = useState(false)
   const statusStyle = `${status === 'Sale Closed' && 'text-[#e928c2]'} ${
@@ -127,7 +128,7 @@ const LaunchaPadCard = ({
             )}{' '}
           </button>
           <Link
-            to={'/launchpad_list/launchpad'}
+            to={`/launchpads/${id}`}
             className={'gold-button text-sm p-1'}
           >
             View
