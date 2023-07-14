@@ -1,10 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import Button from './Button'
 import Input from './Input'
+import useModal from '../useModal'
 
-
-const FinalStep = ({ onclick }) => {
+const FinalStep = () => {
   const navigate = useNavigate()
+  const { handleSetModal, modal } = useModal()
+
+  const handleSuccessMessage = () => {
+    console.log('clicked')
+    window.alert('Launchpad created successfully')
+  }
   return (
     <div className='gold-bg rounded-md p-10 mt-10  md:px-20  wrapper'>
       <div>
@@ -77,7 +83,7 @@ const FinalStep = ({ onclick }) => {
           secondary
           label='Go Back'
         />
-        <Button onclick={() => onclick('next')} label='Approve Payment' />
+        <Button onclick={handleSuccessMessage} label='Approve Payment' />
       </div>
     </div>
   )

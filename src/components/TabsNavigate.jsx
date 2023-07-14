@@ -27,7 +27,7 @@ const TabsNavigate = () => {
   const location = useLocation()
   const currentPath = location.pathname
 
-  console.log(currentPath)
+  
   return (
     <div className='flex  justify-between flex-col items-center  lg:flex-row relative gap-3 text-primary'>
       {data.map((d, index) => {

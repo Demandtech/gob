@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const StepOne = () => {
-  const [token, setToken] = useState('hello')
+  const [token, setToken] = useState('')
   const navigate = useNavigate()
 
   const onsubmit = (event) => {

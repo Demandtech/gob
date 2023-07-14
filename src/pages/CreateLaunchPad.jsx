@@ -1,23 +1,25 @@
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-// import Presale1 from '../components/PresaleOne'
-// import Presale2 from '../components/PresaleTwo'
-// import Presale3 from '../components/PresaleThree'
-// import Presale4 from '../components/PresaleFour'
+import SuccessModal from '../components/SuccessModal'
 import TabsNavigate from '../components/TabsNavigate'
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import useModal from '../useModal'
 
 const CreateLaunchPad = () => {
   const [activeEl, setActiveEl] = useState(0)
-  const totalPage = 3
- 
+  const location = useLocation()
+  const currentPath = location.pathname
+  const { modal } = useModal()
+
+  console.log(modal)
   return (
     <Layout>
-      <Header title='Create Presale' page='presale' />
+      <Header title='Create Launchpad' page='Launchpads' />
       <TabsNavigate elIndex={activeEl} />
       {/* {presalePage[activeEl]} */}
       <Outlet />
+      <div>{modal && <SuccessModal />}</div>
     </Layout>
   )
 }
