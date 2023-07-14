@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import Button from './Button'
-import Input from './Input'
+import {Button, Input} from '../components'
+// import Input from './Input'
 import useModal from '../useModal'
 
 const FinalStep = () => {
@@ -8,7 +8,6 @@ const FinalStep = () => {
   const { handleSetModal, modal } = useModal()
 
   const handleSuccessMessage = () => {
-    console.log('clicked')
     window.alert('Launchpad created successfully')
   }
   return (

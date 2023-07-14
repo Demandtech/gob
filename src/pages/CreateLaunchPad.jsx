@@ -12,7 +12,7 @@ const CreateLaunchPad = () => {
   const currentPath = location.pathname
   const { modal } = useModal()
 
-  console.log(modal)
+ 
   return (
     <Layout>
       <Header title='Create Launchpad' page='Launchpads' />

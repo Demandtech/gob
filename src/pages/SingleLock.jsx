@@ -7,12 +7,12 @@ import Header from '../components/Header'
 const SingleLock = () => {
   const { id } = useParams()
   const [singleLock, setSingleLock] = useState(null)
-  console.log(locks)
+
   useEffect(() => {
     const lock = locks.find((item) => item.id === id)
     setSingleLock(lock)
   }, [])
-  console.log(singleLock)
+
   return (
     <Layout>
       <Header title={singleLock?.token} page={singleLock?.token} />
