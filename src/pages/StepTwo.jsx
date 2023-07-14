@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from './Button'
+import { Button } from '../components'
 import { useNavigate } from 'react-router-dom'
 
 const StepTwo = () => {
@@ -27,9 +27,8 @@ const StepTwo = () => {
                 }`}
                 key={index}
                 onClick={() => {
-                  console.log('clicked')
+                 
                   setActiveIndex(index)
-                  console.log(index == activeIndex)
                   setauditor(auditor)
                 }}
               >

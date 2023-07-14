@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import Button from './Button'
-import Input from './Input'
-import Select from './Select'
+import {Button, Input, Select} from '../components'
 
 const StepThree = ({ onclick, onchange }) => {
   const navigate = useNavigate()

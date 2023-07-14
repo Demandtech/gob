@@ -1,5 +1,4 @@
-import Input from './Input'
-import Button from './Button'
+import { Input, Button } from '../components'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,10 +16,9 @@ const StepOne = () => {
 
   const onchangeText = (event) => {
     setToken(event.target.value)
-    console.log(event.target)
   }
 
-  console.log(token)
+  
   return (
     <div className='gold-bg px-10  mt-10 py-10 rounded-md md:px-28  wrapper'>
       <Input
