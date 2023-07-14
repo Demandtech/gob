@@ -274,7 +274,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   <li>
                     <Link
                       onClick={() => setIsSidebarOpen(false)}
-                      to={'/create-launchpad/step-one'}
+                      to={'/create-launchpad'}
                     >
                       Create Launchpad
                     </Link>
