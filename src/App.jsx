@@ -4,9 +4,12 @@ import Locker from './pages/Locker'
 import Presale from './pages/Presale'
 import Explore from './pages/Explore'
 import ProjectName from './pages/ProjectName'
-import SinglePresale from './pages/SinglePresale'
+import LaunchPadList from './pages/LaunchPadList'
 import SingleLaunchpad from './pages/SingleLaunchpad'
+import Locks from './pages/Locks'
+
 import Layout from './components/Layout'
+import SingleLock from './pages/SingleLock'
 
 function App() {
   return (
@@ -16,10 +19,15 @@ function App() {
           <Route index path='/' element={<Home />} />
           <Route path='locker' element={<Locker />} />
           <Route path='presale' element={<Presale />} />
-          <Route path='single' element={<SinglePresale />} />
+          <Route path='/launpad_list' element={<LaunchPadList />} />
           <Route path='explore' element={<Explore />} />
           <Route path='project' element={<ProjectName />} />
-          <Route path='single/launchpad' element={<SingleLaunchpad />} />
+          <Route
+            path='/launchpad_list/launchpad'
+            element={<SingleLaunchpad />}
+          />
+          <Route path='locks' element={<Locks />} />
+          <Route path='/lock/:id' element={<SingleLock />} />
         </Routes>
       </BrowserRouter>
     </div>

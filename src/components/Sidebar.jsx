@@ -281,7 +281,10 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   </li>
 
                   <li>
-                    <Link onClick={() => setIsSidebarOpen(false)} to='/project'>
+                    <Link
+                      onClick={() => setIsSidebarOpen(false)}
+                      to='/launpad_list'
+                    >
                       Launchpad List
                     </Link>
                   </li>
@@ -323,7 +326,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
                   </li>
 
                   <li>
-                    <Link onClick={() => setIsSidebarOpen(false)} to='/explore'>
+                    <Link onClick={() => setIsSidebarOpen(false)} to='/locks'>
                       Lock List
                     </Link>
                   </li>

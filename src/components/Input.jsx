@@ -16,7 +16,7 @@ const Input = ({
         <div className=' flex w-full items-center gap-2 relative focus:-translate-y-1'>
           <input
             placeholder={placeholder}
-            className={`border border-gray700 p-2 scale-150`}
+            className={`w-full border border-gray700 p-2 scale-150`}
             type={type}
             name={name}
             onChange={onchange}
@@ -35,8 +35,6 @@ const Input = ({
       </div>
     )
   }
-
-  
 
   return (
     <>

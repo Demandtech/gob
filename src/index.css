@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/enchanted-land');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap');
 
 @font-face {
   font-family: tildaNormal;
@@ -162,7 +163,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px rgba(239, 210, 173, 0.5);
- 
 }
 
 .home-img {
@@ -253,7 +253,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #8b4513;
+  /* background-color: #8b4513; */
   animation: blink 0.7s infinite;
 }
 
@@ -406,8 +406,14 @@ input[type='checkbox']:focus {
 }
 
 .card-name {
-  font-family: 'Enchanted Land', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.3rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.locks-table {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .gold-button:hover {

@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Input from '../components/Input'
 import ProjectCard from '../components/ProjectCard'
 import Select from '../components/Select'
-import { option } from './SinglePresale'
+import { option } from './LaunchPadList'
 
 const projects = [
   {

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 
-const SinglePresaleCard = ({
+const LaunchaPadCard = ({
   leve,
   range,
   img,
   name,
-  upcoming,
+  status,
   eth,
   progress,
   liquidity,
@@ -19,11 +19,33 @@ const SinglePresaleCard = ({
   icon,
 }) => {
   const [isLike, setIsLike] = useState(false)
+  const statusStyle = `${status === 'Sale Closed' && 'text-[#e928c2]'} ${
+    status === 'Success' && 'text-[#48c774]'
+  } ${status === 'Sale Canceled' && 'text-[#a0a0a0]'} ${
+    status === 'Upcoming' && 'text-[#d29813]'
+  } ${status === 'Sale Ended' && 'text-[#ff3465]'}`
+
+  const statusWrapperStyle = `${
+    status === 'Sale Closed' && 'bg-[#e928c2]/[.1]'
+  } ${status === 'Success' && 'bg-[#48c774]/[.1]'} ${
+    status === 'Sale Canceled' && 'bg-[#a0a0a0]/[.1]'
+  } ${status === 'Upcoming' && 'bg-[#d29813]/[.1]'} ${
+    status === 'Sale Ended' && 'bg-[#ff3465]/[.1]'
+  }`
+
+  const dotStyle = `${status === 'Sale Closed' && 'bg-[#e928c2]'} ${
+    status === 'Success' && 'bg-[#48c774]'
+  } ${status === 'Sale Canceled' && 'bg-[#a0a0a0]'} ${
+    status === 'Upcoming' && 'bg-[#d29813]'
+  } ${status === 'Sale Ended' && 'bg-[#ff3465]'}`
+
   return (
     <div className='relative overflow-hidden gold-bg p-5  rounded-md'>
-      <div className='absolute top-8 -right-5 flex items-center gap-2 bg-background px-2 py-1 rounded-2xl'>
-        <div className='dot'></div>
-        <span className={'text-sm pr-4 text-[#8B4513]'}>{upcoming ? 'Upcoming' : 'Sale Live' }</span>
+      <div
+        className={`absolute top-8 right-0 flex items-center gap-2 ${statusWrapperStyle} px-2 py-1 rounded-tl-2xl rounded-bl-2xl`}
+      >
+        <div className={`dot ${dotStyle}`}></div>
+        <span className={`text-bold ${statusStyle}`}>{status}</span>
       </div>
 
       <div className='flex gap-2 flex-col '>
@@ -104,7 +126,10 @@ const SinglePresaleCard = ({
               <BsSuitHeart className='text-[#8B4513]' />
             )}{' '}
           </button>
-          <Link to={'/single/launchpad'} className={'gold-button text-sm p-1'}>
+          <Link
+            to={'/launchpad_list/launchpad'}
+            className={'gold-button text-sm p-1'}
+          >
             View
           </Link>
         </div>
@@ -113,4 +138,4 @@ const SinglePresaleCard = ({
   )
 }
 
-export default SinglePresaleCard
+export default LaunchaPadCard

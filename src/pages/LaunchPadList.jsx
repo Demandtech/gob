@@ -3,16 +3,16 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Select from '../components/Select'
 import Input from '../components/Input'
-import SinglePresaleCard from '../components/SinglePresaleCard'
+import LaunchPadCard from '../components/LaunchPadCard'
 
 import bnbSvg from '../assets/svgs/bnb.svg'
-import ethSvg  from '../assets/svgs/ethereum.svg'
+import ethSvg from '../assets/svgs/ethereum.svg'
 
-const SinglePresale = () => {
+const LaunchPadList = () => {
   return (
     <Layout>
       <Header page={'sinlge Presale'} title={'Current Presale'} />
-      <BasicTabs />
+      <BasicTabs tabList={tabs} />
     </Layout>
   )
 }
@@ -25,8 +25,8 @@ const tabs = [
         name: 'DOGFOOD',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: false,
+        leve: 'SoftCap/HardCap',
+        status: 'Success',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -40,8 +40,8 @@ const tabs = [
         name: 'Advance Mode 2',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
+        leve: 'SoftCap/HardCap',
+        status: 'Sale Closed',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -55,8 +55,8 @@ const tabs = [
         name: 'Advance Mode 3',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: false,
+        leve: 'SoftCap/HardCap',
+        status: 'Upcoming',
         range: '5 ETH - 10EH',
         progress: 89,
         liquidity: 51,
@@ -70,8 +70,8 @@ const tabs = [
         name: 'Contributor One',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
+        leve: 'SoftCap/HardCap',
+        status: 'Sale Canceled',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -85,8 +85,8 @@ const tabs = [
         name: 'Contributor Two',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: false,
+        leve: 'SoftCap/HardCap',
+        status: 'Sale Ended',
         range: '5 ETH - 10EH',
         progress: 10,
         liquidity: 51,
@@ -100,8 +100,8 @@ const tabs = [
         name: 'Contributor Three',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
+        leve: 'SoftCap/HardCap',
+        status: 'Upcoming',
         range: '5 ETH - 10EH',
         progress: 11,
         liquidity: 51,
@@ -115,8 +115,8 @@ const tabs = [
         name: 'Contributor Four',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
+        leve: 'SoftCap/HardCap',
+        status: 'Sale Canceled',
         range: '5 ETH - 10EH',
         progress: 50,
         liquidity: 51,
@@ -128,56 +128,56 @@ const tabs = [
       },
     ],
   },
-  {
-    title: 'Advanced Mode',
-    projects: [
-      {
-        name: 'Advance Mode 1',
-        img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
-        eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
-        range: '5 ETH - 10EH',
-        progress: 0,
-        liquidity: 51,
-        lockTime: '90days',
-        saleStart: '00:01:19',
-        audit: false,
-        kyc: true,
-        icon: ethSvg,
-      },
-      {
-        name: 'Advance Mode 2',
-        img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
-        eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
-        range: '5 ETH - 10EH',
-        progress: 0,
-        liquidity: 51,
-        lockTime: '90days',
-        saleStart: '00:01:19',
-        audit: true,
-        kyc: true,
-        icon: bnbSvg,
-      },
-      {
-        name: 'Advance Mode 3',
-        img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
-        eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
-        range: '5 ETH - 10EH',
-        progress: 0,
-        liquidity: 51,
-        lockTime: '90days',
-        saleStart: '00:01:19',
-        audit: true,
-        kyc: true,
-        icon: bnbSvg,
-      },
-    ],
-  },
+  // {
+  //   title: 'Advanced Mode',
+  //   projects: [
+  //     {
+  //       name: 'Advance Mode 1',
+  //       img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
+  //       eth: '6,300,000,000 DOGFOOD',
+  //       leve: 'Soft/Hard',
+  //       upcoming: true,
+  //       range: '5 ETH - 10EH',
+  //       progress: 0,
+  //       liquidity: 51,
+  //       lockTime: '90days',
+  //       saleStart: '00:01:19',
+  //       audit: false,
+  //       kyc: true,
+  //       icon: ethSvg,
+  //     },
+  //     {
+  //       name: 'Advance Mode 2',
+  //       img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
+  //       eth: '6,300,000,000 DOGFOOD',
+  //       leve: 'Soft/Hard',
+  //       upcoming: true,
+  //       range: '5 ETH - 10EH',
+  //       progress: 0,
+  //       liquidity: 51,
+  //       lockTime: '90days',
+  //       saleStart: '00:01:19',
+  //       audit: true,
+  //       kyc: true,
+  //       icon: bnbSvg,
+  //     },
+  //     {
+  //       name: 'Advance Mode 3',
+  //       img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
+  //       eth: '6,300,000,000 DOGFOOD',
+  //       leve: 'Soft/Hard',
+  //       upcoming: true,
+  //       range: '5 ETH - 10EH',
+  //       progress: 0,
+  //       liquidity: 51,
+  //       lockTime: '90days',
+  //       saleStart: '00:01:19',
+  //       audit: true,
+  //       kyc: true,
+  //       icon: bnbSvg,
+  //     },
+  //   ],
+  // },
   {
     title: 'My Contributions',
     projects: [
@@ -185,8 +185,8 @@ const tabs = [
         name: 'Contributor One',
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
-        leve: 'Soft/Hard',
-        upcoming: true,
+        leve: 'Success',
+        status: 'Sale Ended',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -201,7 +201,7 @@ const tabs = [
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
         leve: 'Soft/Hard',
-        upcoming: false,
+        status: 'Sale Canceled',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -216,7 +216,7 @@ const tabs = [
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
         leve: 'Soft/Hard',
-        upcoming: true,
+        status: 'Sale Ended',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -231,7 +231,7 @@ const tabs = [
         img: 'https://coenterprises.com.au/wp-content/uploads/2018/02/male-placeholder-image.jpeg',
         eth: '6,300,000,000 DOGFOOD',
         leve: 'Soft/Hard',
-        upcoming: false,
+        status: 'Sale Closed',
         range: '5 ETH - 10EH',
         progress: 0,
         liquidity: 51,
@@ -275,7 +275,7 @@ export const option = {
   ],
 }
 
-const BasicTabs = () => {
+export const BasicTabs = ({ tabList }) => {
   const [activeTab, setActiveTab] = useState(0)
   const [projects, setProjects] = useState(tabs[activeTab])
 
@@ -286,7 +286,7 @@ const BasicTabs = () => {
   return (
     <section>
       <div className=' justify-center  flex text-white flex-col md:flex-row items-center gap-2 md:gap-10'>
-        {tabs.map((tab, index) => {
+        {tabList.map((tab, index) => {
           return (
             <button
               key={index}
@@ -304,7 +304,7 @@ const BasicTabs = () => {
       </div>
 
       <div className='hidden md:block h-[1.5px] w-full bg-gray-500 -translate-y-0.5'></div>
-      <div className='mt-10 flex items-end flex-col md:flex-row'>
+      {/* <div className='mt-10 flex items-end flex-col md:flex-row'>
         <div className='md:w-1/3 lg:w-3/4 w-full mb-2 md:mb-0'>
           <Input
             placeholder={'Enter token name or token symbol'}
@@ -331,15 +331,15 @@ const BasicTabs = () => {
             className={'text-dark'}
           />
         </div>
-      </div>
+      </div> */}
       <div className='pt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {projects.projects.map((pro, index) => {
           console.log(pro)
-          return <SinglePresaleCard {...pro} key={index} />
+          return <LaunchPadCard {...pro} key={index} />
         })}
       </div>
     </section>
   )
 }
 
-export default SinglePresale
+export default LaunchPadList
