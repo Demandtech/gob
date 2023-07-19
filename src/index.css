@@ -165,18 +165,42 @@ body {
   text-shadow: 2px 2px rgba(239, 210, 173, 0.5);
 }
 
+.main-title {
+  font-family: 'Enchanted Land', sans-serif;
+  background: linear-gradient(
+    126deg,
+    rgba(187, 160, 123, 1) 0%,
+    rgba(230, 212, 173, 1) 32%,
+    rgba(204, 176, 137, 1) 68%,
+    rgba(230, 212, 173, 1) 100%
+  );
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  /* line-height: 1.23; */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px rgba(239, 210, 173, 0.5);
+}
+
 .home-img {
   position: relative;
-  background: #1a1411;
+  /* background: #1a1411; */
   border: 2px solid;
   border-radius: 10px;
   overflow: hidden;
 }
 
+.home-img::after {
+  position: absolute;
+  content: 'Hello';
+  color: white;
+}
+
 .home-img img {
-  width: 100%;
+  /* width: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.6; */
 }
 
 .goldcardshadow {

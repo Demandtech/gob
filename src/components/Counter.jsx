@@ -46,7 +46,7 @@ export const Counter = () => {
             className='text-center p-3 flex-1 counter-card bg-[#210c05]'
           >
             <h2 className='counter-number font-bold'>{pro.count}</h2>
-            <p className='uppercase font-semibold text-[#ccb089] text-sm'>
+            <p className='uppercase font-semibold text-[#ccb089] text-xs md:text-sm'>
               {pro.text}
             </p>
           </div>
