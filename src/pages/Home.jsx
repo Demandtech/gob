@@ -41,14 +41,14 @@ const Home = () => {
             <div className='flex flex-col w-full md:w-auto  md:flex-row gap-5 mt-5'>
               <Link
                 to={'/create-launchpad'}
-                className=' text-[#210c05] px-5 py-2 w-full text-center whitespace-nowrap gold-bg font-bold'
+                className=' bg-[#ccb089] px-5 py-2 w-full text-center whitespace-nowrap hover:bg-gold-bg font-bold'
               >
                 Create LaunchPad
               </Link>
 
               <Link
                 to={'/create-lock'}
-                className=' whitespace-nowrap text-[#210c05] px-5 py-2 w-full text-center gold-bg font-bold'
+                className=' whitespace-nowrap bg-[#ccb089] px-5 py-2 w-full text-center hover:gold-bg font-bold'
               >
                 Creat Lock
               </Link>
