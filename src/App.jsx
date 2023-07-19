@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index path='/' element={<Home />} />
-          <Route path='locker' element={<Locker />} />
+          <Route path='create-lock' element={<Locker />} />
 
           <Route path='create-launchpad' element={<CreateLaunchPad />}>
             <Route index element={<StepOne />} />

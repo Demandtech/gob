@@ -43,7 +43,7 @@ export const Counter = () => {
             data-aos={animation}
             data-aos-easing='linear'
             key={index}
-            className='text-center p-3 flex-1 counter-card'
+            className='text-center p-3 flex-1 counter-card bg-[#210c05]'
           >
             <h2 className='counter-number font-bold'>{pro.count}</h2>
             <p className='uppercase font-semibold text-[#ccb089] text-sm'>

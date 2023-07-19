@@ -9,12 +9,14 @@ import {
   FaChevronDown,
   FaChevronRight,
 } from 'react-icons/fa'
+import { AiOutlineMenuUnfold, AiOutlineMenu } from 'react-icons/ai'
 import navArroIcon from '../assets/svgs/nav-arrow-icon.svg'
 import { Link } from 'react-router-dom'
 import { FiLayout, FiTwitter } from 'react-icons/fi'
 import { FcHome } from 'react-icons/fc'
 import { SiLaunchpad } from 'react-icons/si'
 import { BsPersonLock } from 'react-icons/bs'
+import SmallNavigation from './SmallNavigation'
 
 const navigation = [
   {
@@ -75,6 +77,17 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
   const innerMenuRef = useRef(null)
   const [disableScroll, setDisableScroll] = useState(false)
 
+  const [showSmallNav, setShowSmallNav] = useState(false)
+  const [position, setPosition] = useState(null)
+
+  const [isMouseEnterSmallMenu, setisMouseEnterSmallMenu] = useState({
+    status: false,
+    info: [
+      { text: '', url: '' },
+      { text: '', url: '' },
+    ],
+  })
+
   const menuRefTwo = useRef(null)
   const innerMenuRefTwo = useRef(null)
 
@@ -97,8 +110,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
   useEffect(() => {
     let height = innerMenuRef.current.getBoundingClientRect().height
     let height1 = menuRef.current.getBoundingClientRect().height
-    console.log(isMenuOpen)
-    console.log(height1, height)
+
     if (isMenuOpen) {
       // menuRefTwo.current.style.height = '0px'
       setIsMenuOpenTwo(false)
@@ -165,6 +177,18 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
     document.body.classList.remove('disable-scroll')
   }
 
+  const handleOpenSmallMenu = (e, payload) => {
+    setPosition(e.target.offsetTop)
+    setShowSmallNav(payload)
+     
+  }
+
+  const handleCloseSmallMenu = (payload) => {
+    if (!isMouseEnterSmallMenu) {
+      setShowSmallNav({ ...showSmallNav, status: payload })
+    }
+  }
+
   return (
     <>
       <div
@@ -177,17 +201,28 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
         >
           {!isSidebarOpen ? (
             <div className='icon'>
-              <FaBars className='-rotate-45 z-0' />
+              <AiOutlineMenu className='z-0' />
             </div>
           ) : (
             <div className='icon z-0'>
-              <FaArrowLeft />
+              <AiOutlineMenuUnfold />
             </div>
           )}
           <div className='icon absolute top-0 h-full left-0 w-full'></div>
         </button>
         <p className='flex-1'>First Launchpad</p>
       </div>
+      {showSmallNav.status && !isSidebarOpen && (
+        <SmallNavigation
+          onMouseEnter={() => setisMouseEnterSmallMenu(true)}
+          onMouseLeave={() => {
+            setShowSmallNav({...showSmallNav, status: false})
+            setisMouseEnterSmallMenu(false)
+          }}
+          position={position}
+          data={showSmallNav}
+        />
+      )}
       <aside
         className={`aside text-primary min-h-screen   transition-all duration-300 z-50 fixed  top-[68px] border-[#bba07b] border-t-2 md:border-t-0 flex flex-col md:top-0 ${
           !isSidebarOpen ? 'w-0 md:w-[60px] overflow-hidden' : 'w-[230px] '
@@ -212,11 +247,11 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
             <button className='h-10 relative' type='button'>
               {!isSidebarOpen ? (
                 <div className='icon'>
-                  <FaBars className='-rotate-45 icon text-[#100702]' />
+                  <AiOutlineMenu className='icon text-[#100702]' />
                 </div>
               ) : (
                 <div className='icon text-[#100702]'>
-                  <FaArrowLeft />
+                  <AiOutlineMenuUnfold />
                 </div>
               )}
               <div className='icon absolute top-0 h-full left-0 w-full'></div>
@@ -244,7 +279,25 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
               onClick={handleMenuOpen}
             >
               <div className='flex gap-2 items-center cursor-pointer'>
-                <div className='flex gap-5 items-center'>
+                <div
+                  className='flex gap-5 items-center'
+                  onMouseEnter={(e) =>
+                    handleOpenSmallMenu(e, {
+                      status: true,
+                      info: [
+                        {
+                          text: 'Create LaunchPad',
+                          url: '/create-launchpad',
+                        },
+                        {
+                          text: 'LaunchPad List',
+                          url: '/launchpads',
+                        },
+                      ],
+                    })
+                  }
+                  onMouseLeave={() => handleCloseSmallMenu(false)}
+                >
                   <div>
                     <SiLaunchpad size={20} />
                   </div>
@@ -299,7 +352,25 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
               }`}
             >
               <div className='flex gap-2 items-center cursor-pointer'>
-                <div className='flex gap-5 items-center'>
+                <div
+                  className='flex gap-5 items-center'
+                  onMouseEnter={(e) =>
+                    handleOpenSmallMenu(e, {
+                      status: true,
+                      info: [
+                        {
+                          text: 'Create Lock',
+                          url: '/create-lock',
+                        },
+                        {
+                          text: 'Lock List',
+                          url: '/locks',
+                        },
+                      ],
+                    })
+                  }
+                  onMouseLeave={() => handleCloseSmallMenu(false)}
+                >
                   <div>
                     <BsPersonLock size={20} />
                   </div>
@@ -320,7 +391,10 @@ const Sidebar = ({ isSidebarOpen, handleSidebar, setIsSidebarOpen }) => {
               >
                 <ul ref={innerMenuRefTwo} className={`pl-10 pt-1 `}>
                   <li>
-                    <Link onClick={() => setIsSidebarOpen(false)} to='/locker'>
+                    <Link
+                      onClick={() => setIsSidebarOpen(false)}
+                      to='/create-lock'
+                    >
                       Create Lock
                     </Link>
                   </li>
