@@ -20,8 +20,7 @@ const SmallNavigation = ({ position, onMouseEnter, onMouseLeave, data }) => {
   return (
     <ul
       ref={navRef}
-      className={`gold-bg absolute 
-     text-xs z-10 opacity-0 transition-all duration-300 min-w-[200px] py-5 rounded-md text-[#8B4513] ${
+      className={`gold-bg absolute text-sm z-10 opacity-0 transition-all duration-300 min-w-[200px] py-5 rounded-md text-[#8B4513] ${
        position && ' opacity-100'
      }`}
       onMouseEnter={onMouseEnter}

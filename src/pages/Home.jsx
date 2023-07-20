@@ -24,7 +24,7 @@ const Home = () => {
               className='h-full mx-auto'
               loading='lazy'
             /> */}
-            <h1 className='main-title text-3xl md:text-6xl'>
+            <h1 className=' uppercase main-title text-2xl md:text-4xl text-center leading-10'>
               Introducing the Sirius Launchpad Protocol!
             </h1>
             <div className='text-white text-xl md:text-2xl text-center'>
@@ -41,14 +41,14 @@ const Home = () => {
             <div className='flex flex-col w-full md:w-auto  md:flex-row gap-5 mt-5'>
               <Link
                 to={'/create-launchpad'}
-                className=' bg-[#ccb089] px-5 py-2 w-full text-center whitespace-nowrap hover:bg-gold-bg font-bold'
+                className=' bg-[#ccb089] px-5 py-2 w-full md:w-[200px] text-center whitespace-nowrap hover:bg-gold-bg font-bold '
               >
                 Create LaunchPad
               </Link>
 
               <Link
                 to={'/create-lock'}
-                className=' whitespace-nowrap bg-[#ccb089] px-5 py-2 w-full text-center hover:gold-bg font-bold'
+                className=' whitespace-nowrap bg-[#ccb089] px-5 py-2 w-full text-center hover:gold-bg font-bold md:w-[200px]'
               >
                 Creat Lock
               </Link>
